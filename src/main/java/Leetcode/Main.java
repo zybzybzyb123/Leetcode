@@ -110,7 +110,8 @@ public class Main {
 //        TreeNode root = new TreeNode(0);
 //        root.left = new TreeNode(-1);
 //        root.right = new TreeNode(-5);
-        int n = 10, k = 2;
+        String s1 = "delete", s2 = "leet";
         Solution solution = new Solution();
+        System.out.println(solution);
     }
 }
