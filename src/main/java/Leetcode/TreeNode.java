@@ -1,5 +1,4 @@
-package main.java.OJ;
-
+package Leetcode;
 public class TreeNode {
     int val;
     TreeNode left;

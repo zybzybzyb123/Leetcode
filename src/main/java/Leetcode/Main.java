@@ -1,4 +1,5 @@
 package Leetcode;
+import sun.reflect.generics.tree.Tree;
 
 import java.util.*;
 
@@ -101,16 +102,17 @@ class Solution {
         }
         System.out.println();
     }
-
 }
 public class Main {
     public static void main(String[] args){
 //        FileInputStream file = new FileInputStream("in.txt");
 //        System.setIn(file);
-//        TreeNode root = new TreeNode(0);
-//        root.left = new TreeNode(-1);
-//        root.right = new TreeNode(-5);
-        String s1 = "delete", s2 = "leet";
+//        root root = new root(0);
+//        root.left = new root(-1);
+//        root.right = new root(-5);
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
         Solution solution = new Solution();
         System.out.println(solution);
     }
