@@ -101,12 +101,42 @@ class Solution {
         }
         System.out.println();
     }
+    public int[] nextGreaterElements(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return new int[0];
+        }
+        int[] ans = new int[nums.length];
+        LinkedList<Integer> stack = new LinkedList<>();
+        int MaxPos = -1, len = 2 * nums.length;
+        for(int i = 0; i < len; i++){
+            while(!stack.isEmpty() && nums[stack.peek() % nums.length] < nums[i % nums.length]){
+                ans[stack.pop() % nums.length] = nums[i % nums.length];
+            }
+            if(stack.isEmpty()){
+                MaxPos = i;
+            }
+            stack.push(i);
+        }
+        while(!stack.isEmpty()){
+            int top = stack.pop();
+            if(top >= nums.length){
+                continue;
+            }
+            if(nums[top] == nums[MaxPos]){
+                ans[top] = -1;
+            } else{
+                ans[top] = nums[MaxPos];
+            }
+        }
+        return ans;
+    }
 }
 public class Main {
     public static void main(String[] args){
 //        FileInputStream file = new FileInputStream("in.txt");
 //        System.setIn(file);
         Solution solution = new Solution();
-        System.out.println(solution);
+        int[] nums = new int[]{1,2,2,2,1};
+        System.out.println(Arrays.toString(solution.nextGreaterElements(nums)));
     }
 }
