@@ -106,8 +106,6 @@ public class Main {
     public static void main(String[] args){
 //        FileInputStream file = new FileInputStream("in.txt");
 //        System.setIn(file);
-        
-        int[] nums = new int[]{1, 5, 233, 7};
         Solution solution = new Solution();
         System.out.println(solution);
     }
