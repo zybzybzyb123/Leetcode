@@ -108,5 +108,6 @@ public class Main {
 //        FileInputStream file = new FileInputStream("in.txt");
 //        System.setIn(file);
         Solution solution = new Solution();
+        System.out.println(solution);
     }
 }
