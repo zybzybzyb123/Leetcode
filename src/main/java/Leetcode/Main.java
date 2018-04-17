@@ -101,7 +101,6 @@ class Solution {
 //        }
 //        System.out.println();
 //    }
-
 }
 
 public class Main {
@@ -109,12 +108,6 @@ public class Main {
 //        FileInputStream file = new FileInputStream("in.txt");
 //        System.setIn(file);
         Solution solution = new Solution();
-        String bottom = "AABA";
-        String[] array = new String[]{"AAA","AAB","ABA","ABB","BAC"};
-        List<String> list = new ArrayList<>();
-        for(String str : array){
-            list.add(str);
-        }
         System.out.println(solution);
     }
 }
