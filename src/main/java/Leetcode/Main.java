@@ -109,5 +109,6 @@ public class Main {
 //        System.setIn(file);
         Solution solution = new Solution();
         System.out.println(solution);
+        
     }
 }
