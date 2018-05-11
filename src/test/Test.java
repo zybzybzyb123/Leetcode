@@ -155,4 +155,30 @@ public class Test {
 
         return cand;
     }
+
+    private int gcd(int m, int n){
+        if(n % m == 0) return m;
+        return gcd(n % m, m);
+    }
+    public int consecutiveNumbersSum(int N) {
+        int m = (int)Math.sqrt(N);
+        int ans = 1;
+        for(int i = 2; i <= m; i++){
+            if(i % 2 == 1 && N % i == 0){
+                ans++;
+                if(i * i != N && (N / i - 1) / 2 < i){
+                    ans++;
+                }
+            } else if(i % 2 == 0){
+                int k = gcd(i, N);
+//                System.out.format("i : %d , k : %d\n", i, k);
+                if(i / k == 2){
+                    ans++;
+                } else if(i == k && (N / i - 1) / 2 < i){
+                    ans++;
+                }
+            }
+        }
+        return ans;
+    }
 }
