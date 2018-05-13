@@ -1,14 +1,11 @@
 package Leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ZUOYANBIN1 on 2017/9/18.
  */
 class Solution {
-
 }
 
 public class Main {
@@ -16,6 +13,6 @@ public class Main {
 //        FileInputStream file = new FileInputStream('in.txt');
 //        System.setIn(file);
         Solution solution = new Solution();
-//        System.out.println(solution);
+        System.out.println(solution);
     }
 }
