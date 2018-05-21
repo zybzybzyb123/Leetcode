@@ -1,3 +1,7 @@
+/**
+ * 用位向量就AC
+ */
+
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         if(null == nums || 0 == nums.length){
@@ -5,6 +9,7 @@ class Solution {
         }
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
+        //总共有2^n个子集
         int m = 1 << nums.length;
         for(int i = 0; i < m; i++){
             int j = i, id = 0;
