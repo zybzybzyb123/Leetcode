@@ -1,10 +1,5 @@
 package Leetcode;
 
-import org.omg.CORBA.INTERNAL;
-import sun.awt.image.IntegerComponentRaster;
-
-import java.util.*;
-
 /**
  * Created by ZUOYANBIN1 on 2017/9/18.
  */
