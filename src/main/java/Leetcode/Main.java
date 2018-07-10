@@ -3,9 +3,7 @@ package Leetcode;
 /**
  * Created by ZUOYANBIN1 on 2017/9/18.
  */
-
 class Solution {
-
 }
 
 public class Main {
