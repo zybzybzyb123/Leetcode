@@ -1,3 +1,4 @@
+//CHECKSTYLE:OFF
 package test;
 
 public class ListNode {

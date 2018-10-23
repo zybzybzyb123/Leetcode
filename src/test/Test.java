@@ -1,6 +1,8 @@
+//CHECKSTYLE:OFF
 package test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
     public List<List<Integer>> subsets(int[] nums) {

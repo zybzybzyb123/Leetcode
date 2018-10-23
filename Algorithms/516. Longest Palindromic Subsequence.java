@@ -1,8 +1,6 @@
-//CHECKSTYLE:OFF
-package Leetcode;
-
 /**
- * Created by zero on 2017/9/18.
+ * 下班途中突然就想出来，经典的区间dp题
+ * dp数组表示区间【l,r】的最大长度
  */
 class Solution {
     public int longestPalindromeSubseq(String s) {
@@ -26,15 +24,5 @@ class Solution {
             }
         }
         return dp[0][n - 1];
-    }
-}
-
-public class Main {
-    public static void main(String[] args){
-//        FileInputStream file = new FileInputStream('in.txt');
-//        System.setIn(file);
-        Solution solution = new Solution();
-        String str = "abcdcefhab";
-        System.out.println(solution.longestPalindromeSubseq(str));
     }
 }
