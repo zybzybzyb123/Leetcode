@@ -1,23 +1,15 @@
-//CHECKSTYLE:OFF
-package Leetcode;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by zero on 2017/9/18.
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ *
+ * 递归是解决这道题最无脑的方法了，不过个人感觉不太优雅
  */
 class Solution {
-    private int[] num = new int[20];
-    public void init(int N) {
-        num[1] = 1;
-        for (int i = 1; i <= N; i += 2) {
-            for (int j = 1; j < i; j += 2) {
-                num[i] += num[j] * num[i - 1 - j];
-            }
-        }
-        System.out.println(num[N]);
-    }
     public List<TreeNode> allPossibleFBT(int N) {
         if ((N & 1) == 0) return new ArrayList<>();
         List<TreeNode> ans = new ArrayList<>();
@@ -38,15 +30,5 @@ class Solution {
             }
         }
         return ans;
-    }
-}
-
-public class Main {
-    public static void main(String[] args){
-//        FileInputStream file = new FileInputStream('in.txt');
-//        System.setIn(file);
-        Solution solution = new Solution();
-        int n = 19;
-        System.out.println(solution.allPossibleFBT(n).size());
     }
 }
