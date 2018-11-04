@@ -1,7 +1,8 @@
-package Leetcode;
-
 /**
- * Created by zero on 2017/9/18.
+ * 这个题做比较好做，就是写的比较简单有点麻烦其实顺时针是有规律的,
+ * 每一个方向移动步数是1 1 2 2 3 3 4 4。。。
+ * 方向分别是右下左上，申明一个方向数组就可以把代码写的很短
+ * 其实还可以对越界的进行优化，让代码稍微快一点
  */
 class Solution {
     private boolean inside(int i, int j, int R, int C) {
@@ -31,13 +32,5 @@ class Solution {
             }
         }
         return res;
-    }
-}
-
-public class Main {
-    public static void main(String[] args){
-//        FileInputStream file = new FileInputStream('in.txt');
-//        System.setIn(file);
-        Solution solution = new Solution();
     }
 }
