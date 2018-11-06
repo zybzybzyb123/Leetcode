@@ -1,10 +1,6 @@
-package Leetcode;
-
-import java.util.Arrays;
-import java.util.List;
-
 /**
- * Created by zero on 2017/9/18.
+ * 判断图是不是联通图的水题
+ * 无脑dfs给过了，只打败3%有点尴尬
  */
 class Solution {
     private static final int LENGTH = 1005;
@@ -24,15 +20,5 @@ class Solution {
         dfs(0, rooms);
         int cnt = Arrays.stream(vis).filter(i -> i > 0).sum();
         return cnt == rooms.size();
-    }
-}
-
-public class Main {
-    public static void main(String[] args){
-//        FileInputStream file = new FileInputStream('in.txt');
-//        System.setIn(file);
-        int[] array = new int[]{1,2,3,4};
-        Solution solution = new Solution();
-        System.out.println(solution);
     }
 }
