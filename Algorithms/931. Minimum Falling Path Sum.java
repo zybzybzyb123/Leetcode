@@ -1,9 +1,6 @@
-package Leetcode;
-
-import java.util.Arrays;
-
 /**
- * Created by zero on 2017/9/18.
+ * 经典题了，就不多说了，在leetcode用stream真的
+ * 特别特别的慢
  */
 class Solution {
     public int minFallingPathSum(int[][] A) {
@@ -19,23 +16,11 @@ class Solution {
                 } else if (j == A.length - 1) {
                     dp[i][j] = Math.min(dp[i - 1][j - 1], dp[i - 1][j]) + A[i][j];
                 } else {
-                    dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1], dp[i - 1][j + 1]), dp[i -
-                            1][j])  +
+                    dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1], dp[i - 1][j + 1]), dp[i - 1][j])  +
                             A[i][j];
                 }
             }
         }
-        //System.out.println(Arrays.toString(dp[A.length - 1]));
         return Arrays.stream(dp[A.length - 1]).min().getAsInt();
-    }
-}
-
-public class Main {
-    public static void main(String[] args){
-//        FileInputStream file = new FileInputStream('in.txt');
-//        System.setIn(file);
-        int[][] array = new int[][]{{-84,-36,2},{87,-79,10},{42,10,63}};
-        Solution solution = new Solution();
-        System.out.println(solution.minFallingPathSum(array));
     }
 }
