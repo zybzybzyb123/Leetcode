@@ -85,5 +85,6 @@ public class Main {
         //TreeNode treeNode = solution.constructFromPrePost(pre, post);
         //solution.bfs(treeNode);
         //solution.preOrder(treeNode);
+        System.out.println(solution);
     }
 }
