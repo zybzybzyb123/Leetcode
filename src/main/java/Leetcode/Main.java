@@ -125,6 +125,7 @@ public class Main {
         //TreeNode treeNode = solution.constructFromPrePost(pre, post);
         //solution.bfs(treeNode);
         //solution.preOrder(treeNode);
+        int[] A = {1, 2, 3, 4};
         System.out.println(solution);
     }
 }
