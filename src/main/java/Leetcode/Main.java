@@ -2,13 +2,9 @@ package Leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
-import java.util.Set;
 
 /**
  * Created by zero on 2017/9/18.
@@ -77,42 +73,6 @@ class Solution {
             preOrder(root.right);
         }
     }
-    public TreeNode subtreeWithAllDeepest(TreeNode root) {
-        if (root == null) return null;
-        Queue<TreeNode> queue = new LinkedList<>();
-        Set<TreeNode> set = new HashSet<>();
-        Map<TreeNode, TreeNode> map = new HashMap<>();
-        int leftNum = 1, cur = 0;
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            leftNum--;
-            TreeNode temp = queue.poll();
-            set.add(temp);
-            if(temp.left != null) {
-                queue.offer(temp.left);
-                map.put(temp.left, temp);
-                cur++;
-            }
-            if(temp.right != null) {
-                queue.offer(temp.right);
-                map.put(temp.right, temp);
-                cur++;
-            }
-            if (leftNum == 0 && cur > 0) {
-                leftNum = cur;
-                cur = 0;
-                set = new HashSet<>();
-            }
-        }
-        while (set.size() != 1) {
-            Set<TreeNode> temp = new HashSet<>();
-            for (TreeNode node : set) {
-                temp.add(map.get(node));
-            }
-            set = temp;
-        }
-        return set.iterator().next();
-    }
 }
 
 public class Main {
@@ -126,6 +86,8 @@ public class Main {
         //solution.bfs(treeNode);
         //solution.preOrder(treeNode);
         int[] A = {1, 2, 3, 4};
+        String str = "";
+        str.toLowerCase();
         System.out.println(solution);
     }
 }
