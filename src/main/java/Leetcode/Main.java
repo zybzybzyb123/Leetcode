@@ -6,9 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by zero on 2017/9/18.
- */
+//CHECKSTYLE:OFF
 class Solution {
     private TreeNode buildTree(int[] pre, int l1, int r1, int[] post, int l2, int
             r2) {
@@ -73,6 +71,33 @@ class Solution {
             preOrder(root.right);
         }
     }
+    public int longestSubstring(String s, int k) {
+        if (k <= 0) return 0;
+        List<Queue<Integer>> list = new ArrayList<>();
+        int[] cnt = new int[26];
+        char[] array = s.toCharArray();
+        for (int i = 0; i < 26; i++) {
+            list.add(new LinkedList<>());
+        }
+        int first = 0, ans = 0;
+        for (int i = 0; i < array.length; i++) {
+            int pos = array[i] - 'a';
+            if (cnt[pos] < k) {
+                cnt[pos]++;
+                list.get(pos).offer(i);
+                ans = Math.max(ans, i - first + 1);
+            } else {
+                int pre = list.get(pos).poll();
+                for (int j = first; j < pre; j++) {
+                    int pos1 = array[i] - 'a';
+                    cnt[pos1]--;
+                    list.get(pos1).poll();
+                }
+                first = pre + 1;
+            }
+        }
+        return ans;
+    }
 }
 
 public class Main {
@@ -85,6 +110,8 @@ public class Main {
         //TreeNode treeNode = solution.constructFromPrePost(pre, post);
         //solution.bfs(treeNode);
         //solution.preOrder(treeNode);
-        System.out.println();
+        String s = "aaabb";
+        int k = 3;
+        System.out.println(solution.longestSubstring(s, k));
     }
 }
