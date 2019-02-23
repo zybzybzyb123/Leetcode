@@ -72,31 +72,7 @@ class Solution {
         }
     }
     public int longestSubstring(String s, int k) {
-        if (k <= 0) return 0;
-        List<Queue<Integer>> list = new ArrayList<>();
-        int[] cnt = new int[26];
-        char[] array = s.toCharArray();
-        for (int i = 0; i < 26; i++) {
-            list.add(new LinkedList<>());
-        }
-        int first = 0, ans = 0;
-        for (int i = 0; i < array.length; i++) {
-            int pos = array[i] - 'a';
-            if (cnt[pos] < k) {
-                cnt[pos]++;
-                list.get(pos).offer(i);
-                ans = Math.max(ans, i - first + 1);
-            } else {
-                int pre = list.get(pos).poll();
-                for (int j = first; j < pre; j++) {
-                    int pos1 = array[i] - 'a';
-                    cnt[pos1]--;
-                    list.get(pos1).poll();
-                }
-                first = pre + 1;
-            }
-        }
-        return ans;
+        return 0;
     }
 }
 
@@ -112,6 +88,8 @@ public class Main {
         //solution.preOrder(treeNode);
         String s = "aaabb";
         int k = 3;
-        System.out.println(solution.longestSubstring(s, k));
+        int[] days = {1,2,3,4,6,8,9,10,13,14,16,17,19,21,24,26,27,28,29};
+        int[] costs = {3,14,50};
+        System.out.println(solution);
     }
 }
