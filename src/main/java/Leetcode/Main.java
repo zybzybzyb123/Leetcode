@@ -86,8 +86,7 @@ public class Main {
         //TreeNode treeNode = solution.constructFromPrePost(pre, post);
         //solution.bfs(treeNode);
         //solution.preOrder(treeNode);
-        String s = "aaabb";
-        int k = 3;
+        int p = 5, q = 3;
         System.out.println(solution);
     }
 }
