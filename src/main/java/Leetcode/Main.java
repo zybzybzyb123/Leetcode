@@ -5,76 +5,14 @@ import static java.util.stream.Collectors.toList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
+import java.util.Set;
 
 //CHECKSTYLE:OFF
 class Solution {
-    private TreeNode buildTree(int[] pre, int l1, int r1, int[] post, int l2, int
-            r2) {
-        System.out.format("l1=%d, r1=%d, l2=%d, r2=%d\n", l1, r1, l2, r2);
-        if (l1 == r1) {
-            return null;
-        }
-
-        TreeNode root = new TreeNode(post[r2 - 1]);
-        if (l1 == r1 - 2 && pre[l1] == post[l2]) {
-            root.left = new TreeNode(pre[l1]);
-            root.right = new TreeNode(pre[l1 + 1]);
-            return root;
-        }
-        int id = r1 - 1;
-        while (pre[id] != post[r2 - 1]) {
-            //System.out.format("id : %d, val : %d\n", id, pre[id]);
-            id--;
-        }
-        root.right = buildTree(pre, id + 1, r1, post,l2 + id - l1, r2 - 1);
-        System.out.format("root=%d\n", root.val);
-        System.out.format("l1=%d, r1=%d, l2=%d, r2=%d, id=%d\n", l1, r1, l2, r2, id);
-        root.left = buildTree(pre, l1, id, post, l2, l2 + id - l1);
-        return root;
-    }
-    public TreeNode constructFromPrePost(int[] pre, int[] post) {
-        return buildTree(pre, 0, pre.length, post, 0, post.length);
-    }
-    public void bfs(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        int leftNum = 1, cur = 0;
-        queue.offer(root);
-        List<Integer> list = new ArrayList<>();
-        while (!queue.isEmpty()) {
-            leftNum--;
-            TreeNode node = queue.poll();
-            list.add(node.val);
-            if (node.left != null) {
-                queue.offer(node.left);
-                cur++;
-            }
-            if (node.right != null) {
-                queue.offer(node.right);
-                cur++;
-            }
-            if (leftNum == 0) {
-                if (cur > 0) {
-                    leftNum = cur;
-                    cur = 0;
-                }
-                System.out.println(Arrays.toString(list.toArray()));
-                list = new ArrayList<>();
-            }
-        }
-    }
-    public void preOrder(TreeNode root) {
-        System.out.println(root.val);
-        if (root.left != null) {
-            preOrder(root.left);
-        }
-        if (root.right != null) {
-            preOrder(root.right);
-        }
-    }
     public int longestSubstring(String s, int k) {
         return 0;
     }
@@ -163,6 +101,72 @@ class Solution {
         }
         return stash.isEmpty();
     }
+
+    public int[][] kClosest(int[][] points, int K) {
+//        Arrays.sort(points, new Comparator<int[]>() {
+//            @Override
+//            public int compare(int[] o1, int[] o2) {
+//                return o1[0] * o1[0] + o1[1] * o1[1] - o2[0] * o2[0] + o2[1] * o2[1];
+//            }
+//        });
+        Arrays.sort(points, (o2, o1) -> o1[0] * o1[0] + o1[1] * o1[1] - o2[0] * o2[0] + o2[1] *
+                o2[1]
+        );
+
+        int[][] ans = new int[K][2];
+        System.arraycopy(points, 0, ans, 0, K);
+        return ans;
+    }
+
+    private void init(Set<String> set) {
+        for (int i = 0; i < 31; i++) {
+            char[] array = String.valueOf(1 << i).toCharArray();
+            Arrays.sort(array);
+            set.add(new String(array));
+        }
+    }
+
+    public boolean reorderedPowerOf2(int N) {
+        Set<String> set = new HashSet<>();
+        init(set);
+        char[] array = String.valueOf(N).toCharArray();
+        Arrays.sort(array);
+        return set.contains(new String(array));
+    }
+
+    private boolean noMore(char[] a, char[] b) {
+        if (a.length != b.length) {
+            return a.length < b.length;
+        }
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                return a[i] < b[i];
+            }
+        }
+        return true;
+    }
+
+    public boolean queryString(String S, int N) {
+        char[] array = S.toCharArray();
+        Set<String> set = new HashSet<>(N);
+        char[] binaryArray = Integer.toBinaryString(N).toCharArray();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == '0') {
+                continue;
+            }
+            for (int j = i + 1; j <= array.length; j++) {
+                if (j - i > binaryArray.length) {
+                    break;
+                }
+                char[] temp = Arrays.copyOfRange(array, i, j);
+//                    System.out.format("temp = %s, binary = %s\n", new String(temp), new String(binaryArray));
+                if (noMore(temp, binaryArray)) {
+                    set.add(new String(temp));
+                }
+            }
+        }
+        return set.size() == N;
+    }
 }
 
 public class Main {
@@ -170,39 +174,11 @@ public class Main {
 //        FileInputStream file = new FileInputStream('in.txt');
 //        System.setIn(file);
         Solution solution = new Solution();
-        int[] pre = {1,2,4,5,3,6,7}, post = {4,5,2,6,7,3,1};
-        //int[] pre = {1,2,3}, post = {2,3,1};
-        //TreeNode treeNode = solution.constructFromPrePost(pre, post);
-        //solution.bfs(treeNode);
-        //solution.preOrder(treeNode);
-        int[][] A = {{0,1,0,0,1,1,1,0,1,0,0,0,1,1,1,1,0,1,0,1,1,1,0,1,1,0,1,1,1,0},{1,1,1,0,1,1,1,
-                0,1,1,1,0,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,0,1,1},{1,1,1,1,0,0,1,1,0,1,1,1,0,1,0,1,
-                1,1,0,0,0,0,1,1,0,1,1,1,1,0},{1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,1,0,1,1,1,1,
-                0,1,1,1,1},{1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,0},{0,1,0,
-                0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,0,1,0,1,1,0,1,1},{1,1,1,0,0,1,1,1,1,1,1,1,
-                0,0,0,0,1,1,0,0,1,1,1,1,1,1,1,1,0,1},{1,0,1,1,0,1,0,1,1,0,1,1,0,0,0,0,1,1,1,1,1,
-                1,1,1,1,1,0,1,1,1},{1,1,0,1,0,0,0,1,1,0,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,0,1,1,1,0},
-                {0,0,1,1,0,0,1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1},{0,1,1,0,1,0,1,1,0,
-                1,1,1,1,1,1,0,0,1,1,1,1,0,0,0,1,1,1,1,1,1},{0,1,0,0,0,1,1,0,1,1,1,1,1,1,1,1,0,1,
-                1,1,1,1,1,0,1,0,0,1,1,1},{1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,
-                1,1,0},{1,1,0,0,1,1,1,1,1,0,1,1,0,1,1,0,0,1,0,0,1,1,0,1,0,1,1,1,1,1},{1,1,1,1,1,
-                1,1,0,1,1,1,1,1,1,1,1,0,0,1,1,1,0,1,0,1,1,0,0,1,1},{1,1,1,1,1,1,1,1,1,0,0,1,1,1,
-                1,1,1,1,0,1,0,0,1,1,1,0,0,0,1,1},{1,1,1,1,1,1,0,0,0,1,0,1,1,0,1,1,0,1,1,1,1,0,1,
-                1,1,1,1,1,1,0},{1,1,0,1,1,1,1,0,0,1,0,1,1,1,0,1,1,0,0,1,1,1,1,1,1,0,1,1,1,0},{1,
-                1,1,0,1,0,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,1,0,1,1,1,0,1,1},{1,1,1,1,1,1,0,0,1,1,
-                0,1,1,1,1,1,0,0,0,1,0,1,1,0,1,1,1,1,1,0},{0,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,
-                0,1,0,1,0,1,1,1,1,0,1},{1,1,1,1,0,0,0,0,1,1,0,0,0,1,0,0,1,1,1,0,1,1,1,0,1,1,0,0,
-                1,1},{1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,0,0,1,1,1,0,1,1,1,1},{1,0,0,1,1,1,
-                1,1,1,1,1,0,1,0,1,1,0,1,0,1,1,1,0,1,0,1,1,1,1,1},{1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,
-                1,0,1,1,0,1,0,0,1,1,1,1,1,0,1},{0,1,0,1,0,1,0,1,1,1,1,1,1,0,1,1,0,0,1,0,1,1,1,0,
-                0,1,1,1,1,1},{1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1},{1,0,
-                0,1,0,1,0,1,1,1,1,1,1,0,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1},{1,0,1,1,1,1,1,1,1,0,1,
-                1,1,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1},{1,1,1,0,0,0,1,1,0,1,0,0,1,1,1,0,1,1,1,1,
-                1,1,1,1,1,1,1,1,0,1}};
-        int[][] B =
-                {{1,1,1,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,0,1,1,1},{1,1,1,1,1,1, 1,1,1,1,1,0,0,1,1,1,0,1,0,1,0,0,1,0,1,1,1,1,1,1},{1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0},{1,1,1,1,1,1,1,1,1,0,0,1,1,0,1,0,0,0,1,1,0,0,1,1,1,0,1,1,1,0},{1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,1,1},{1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1},{0,0,1,1,0,1,1,0,1,1,1,0,1,1,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1},{0,0,0,0,1,1,0,1,0,1,0,1,0,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1},{1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1},{1,1,0,1,0,0,1,1,1,1,1,0,1,1,0,1,1,1,0,1,1,1,1,1,1,1,0,0,0,1},{1,0,1,0,0,1,1,0,0,1,1,1,1,1,1,0,0,1,0,1,1,0,1,0,1,0,0,0,1,0},{1,1,0,0,1,1,1,1,1,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,0,1,1},{1,0,1,1,1,1,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,0,1,0,1,1,1},{1,0,0,1,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,0,1,1,0,1,0,1,1,1,1},{1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1,0,1},{0,1,0,0,0,1,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,1,1,1,0,1},{1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1},{1,1,1,1,1,1,1,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,0,1,0,1,1},{1,0,0,1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1},{1,0,0,1,0,0,1,0,1,0,1,1,1,0,0,1,1,0,1,0,0,1,0,1,1,1,0,1,0,1},{1,1,1,1,1,0,0,1,0,0,1,0,1,1,1,1,1,0,0,1,0,1,1,1,1,0,1,1,1,1},{0,0,0,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1,1,0,0},{1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1,1,1,0,0,1,1},{1,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,0,1,1,0,1,1,1},{0,1,1,1,0,1,0,0,0,1,1,0,1,0,1,1,1,0,1,0,1,1,1,1,1,1,1,1,0,1},{1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,1,1,0},{1,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1},{1,1,1,0,1,1,1,1,1,1,1,1,0,1,0,1,1,0,1,1,1,1,0,1,1,1,0,1,0,1},{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1},{0,1,0,0,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,0}};
+//        System.out.println(solution.queryString("0110", 3));
+//        int[][] A = {};
+//        int[][] B = {};
 //        System.out.println(solution.largestOverlap(A, B));
-        String str = "abcabcababcc";
-        System.out.println(solution.isValid(str));
+//        String str = "abcabcababcc";
+//        System.out.println(solution.isValid(str));
     }
 }
