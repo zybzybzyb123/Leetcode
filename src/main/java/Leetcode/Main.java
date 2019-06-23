@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 
 //CHECKSTYLE:OFF
@@ -167,6 +168,117 @@ class Solution {
         }
         return set.size() == N;
     }
+
+    private int dfs(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < 26; i++) {
+            if (array[i] == 0) {
+                continue;
+            }
+            array[i]--;
+            sum = sum + dfs(array) + 1;
+            array[i]++;
+        }
+        return sum;
+    }
+
+    public int numTilePossibilities(String tiles) {
+        int[] cnt = new int[26];
+        for (int i = 0; i < tiles.length(); i++) {
+            cnt[tiles.charAt(i) - 'A']++ ;
+        }
+        return dfs(cnt);
+    }
+
+    public void duplicateZeros(int[] arr) {
+        int cnt = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                cnt++;
+            }
+        }
+        if (cnt == 0) {
+            return;
+        }
+        int[] res = new int[arr.length];
+        int id = 0;
+        for (int i = 0; i < arr.length && id < arr.length; i++) {
+            res[id++] = arr[i];
+            if (arr[i] == 0) {
+                res[id++] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(res));
+        for (int i = 0; i < res.length; i++) {
+            arr[i] = res[i];
+        }
+    }
+    int[][] dir = new int[][]{{0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}};
+    public int shortestPathBinaryMatrix(int[][] grid) {
+        boolean[] vis = new boolean[10005];
+        int len = grid.length;
+        if(grid[0][0] == 1 || grid[len - 1][len - 1] == 1) {
+            return -1;
+        }
+        vis[0] = true;
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(0);
+        int level = 1, leftNum = 1, cur = 0;
+        while (!queue.isEmpty()) {
+            leftNum--;
+            int node = queue.poll();
+            int x = node / 100, y = node % 100;
+            if (x == grid.length - 1 && y == grid.length - 1) {
+                return level;
+            }
+            for (int i = 0; i < dir.length; i++) {
+                int x1 = x + dir[i][0];
+                int y1 = y + dir[i][1];
+                if (x1 >= 0 && x1 < grid.length && y1 >= 0 && y1 < grid.length && grid[x1][y1] ==
+                        0 && !vis[x1 * 100 + y1]) {
+                    vis[x1 * 100 + y1] = true;
+                    queue.offer(x1 * 100 + y1);
+                    cur++;
+                }
+            }
+            if (leftNum == 0 && cur > 0) {
+                level++;
+                leftNum = cur;
+                cur = 0;
+            }
+        }
+        return -1;
+    }
+
+//    public int maxSumAfterPartitioning(int[] A, int K) {
+//        Deque<Integer> deque = new LinkedList<>();
+//        for (int i = 0; i < K; i++) {
+//            while (!deque.isEmpty() && deque.peekFirst() <= A[i]) {
+//                deque.pollLast();
+//            }
+//            deque.offerLast(i);
+//        }
+//        int sum = deque.peekFirst() * K;
+//        for (int i = K; i < A.length; i++) {
+//            if ()
+//        }
+//        return sum;
+//    }
+
+    public int findInMountainArray(int target, MountainArray mountainArr, int left, int right) {
+        int mid = (left + right) / 2;
+        while (left < right) {
+            if (mountainArr.get(mid) == target) {
+                return mid;
+            }
+        }
+        return -1;
+    }
+
+    public int findInMountainArray(int target, MountainArray mountainArr) {
+        int len = mountainArr.length();
+        return findInMountainArray(target, mountainArr, 0, len);
+    }
 }
 
 public class Main {
@@ -179,6 +291,7 @@ public class Main {
 //        int[][] B = {};
 //        System.out.println(solution.largestOverlap(A, B));
 //        String str = "abcabcababcc";
-//        System.out.println(solution.isValid(str));
+//        int[][] grid = {{0, 0, 0},{1, 1, 0}, {1, 1, 0}};
+        System.out.println(solution);
     }
 }
