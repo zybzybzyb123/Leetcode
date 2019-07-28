@@ -1,5 +1,6 @@
 package Leetcode;
 
+import static java.util.Arrays.sort;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -9,7 +10,6 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 import java.util.Set;
 
 //CHECKSTYLE:OFF
@@ -110,7 +110,7 @@ class Solution {
 //                return o1[0] * o1[0] + o1[1] * o1[1] - o2[0] * o2[0] + o2[1] * o2[1];
 //            }
 //        });
-        Arrays.sort(points, (o2, o1) -> o1[0] * o1[0] + o1[1] * o1[1] - o2[0] * o2[0] + o2[1] *
+        sort(points, (o2, o1) -> o1[0] * o1[0] + o1[1] * o1[1] - o2[0] * o2[0] + o2[1] *
                 o2[1]
         );
 
@@ -122,7 +122,7 @@ class Solution {
     private void init(Set<String> set) {
         for (int i = 0; i < 31; i++) {
             char[] array = String.valueOf(1 << i).toCharArray();
-            Arrays.sort(array);
+            sort(array);
             set.add(new String(array));
         }
     }
@@ -131,7 +131,7 @@ class Solution {
         Set<String> set = new HashSet<>();
         init(set);
         char[] array = String.valueOf(N).toCharArray();
-        Arrays.sort(array);
+        sort(array);
         return set.contains(new String(array));
     }
 
@@ -190,66 +190,6 @@ class Solution {
         return dfs(cnt);
     }
 
-    public void duplicateZeros(int[] arr) {
-        int cnt = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                cnt++;
-            }
-        }
-        if (cnt == 0) {
-            return;
-        }
-        int[] res = new int[arr.length];
-        int id = 0;
-        for (int i = 0; i < arr.length && id < arr.length; i++) {
-            res[id++] = arr[i];
-            if (arr[i] == 0) {
-                res[id++] = 0;
-            }
-        }
-        System.out.println(Arrays.toString(res));
-        for (int i = 0; i < res.length; i++) {
-            arr[i] = res[i];
-        }
-    }
-    int[][] dir = new int[][]{{0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}};
-    public int shortestPathBinaryMatrix(int[][] grid) {
-        boolean[] vis = new boolean[10005];
-        int len = grid.length;
-        if(grid[0][0] == 1 || grid[len - 1][len - 1] == 1) {
-            return -1;
-        }
-        vis[0] = true;
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(0);
-        int level = 1, leftNum = 1, cur = 0;
-        while (!queue.isEmpty()) {
-            leftNum--;
-            int node = queue.poll();
-            int x = node / 100, y = node % 100;
-            if (x == grid.length - 1 && y == grid.length - 1) {
-                return level;
-            }
-            for (int i = 0; i < dir.length; i++) {
-                int x1 = x + dir[i][0];
-                int y1 = y + dir[i][1];
-                if (x1 >= 0 && x1 < grid.length && y1 >= 0 && y1 < grid.length && grid[x1][y1] ==
-                        0 && !vis[x1 * 100 + y1]) {
-                    vis[x1 * 100 + y1] = true;
-                    queue.offer(x1 * 100 + y1);
-                    cur++;
-                }
-            }
-            if (leftNum == 0 && cur > 0) {
-                level++;
-                leftNum = cur;
-                cur = 0;
-            }
-        }
-        return -1;
-    }
-
 //    public int maxSumAfterPartitioning(int[] A, int K) {
 //        Deque<Integer> deque = new LinkedList<>();
 //        for (int i = 0; i < K; i++) {
@@ -275,9 +215,252 @@ class Solution {
         return -1;
     }
 
+    public String defangIPaddr(String address) {
+        return address.replaceAll("\\.", "\\[\\.\\]");
+    }
+
+    public int[] corpFlightBookings(int[][] bookings, int n) {
+        int[] ans = new int[n];
+        for (int i = 0; i < bookings.length; i++) {
+            for (int j = bookings[i][0] - 1; j <= bookings[i][1] - 1; j++) {
+                ans[j] += bookings[i][2];
+            }
+        }
+        return ans;
+    }
+
+    public List<TreeNode> solve(TreeNode preRoot, TreeNode root, Set<Integer> deleteSet) {
+        List<TreeNode> ans = new ArrayList<>();
+        if (preRoot == null && !deleteSet.contains(root.val)) {
+            ans.add(root);
+        }
+
+        preRoot = deleteSet.contains(root.val) ? null : root;
+        if (root.left != null) {
+            ans.addAll(solve(preRoot, root.left, deleteSet));
+            if (deleteSet.contains(root.left.val)) {
+                root.left = null;
+            }
+        }
+        if (root.right != null) {
+            ans.addAll(solve(preRoot, root.right, deleteSet));
+            if (deleteSet.contains(root.right.val)) {
+                root.right = null;
+            }
+        }
+        return ans;
+    }
+
+    public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        Set<Integer> deleteSet = new HashSet<>();
+        for (int i = 0; i < to_delete.length; i++) {
+            deleteSet.add(to_delete[i]);
+        }
+        return solve(null, root, deleteSet);
+    }
+
+//    public int[] maxDepthAfterSplit(String seq) {
+//        LinkedList<Integer> stack = new LinkedList<>();
+//        int rank = 0, curDep = -1, cur = 0;
+//        int[] cnt = new int[10005];
+//        char[] array = seq.toCharArray();
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] == '(') {
+//
+//            }
+//        }
+//    }
+
     public int findInMountainArray(int target, MountainArray mountainArr) {
         int len = mountainArr.length();
         return findInMountainArray(target, mountainArr, 0, len);
+    }
+
+    private int findK(int a1, int m, int k) {
+        for (int i = 1; ;i++) {
+            int value = a1 * i + m * m * i * (i - 1) / 2;
+            if (value > k) {
+                return i - 1;
+            }
+        }
+    }
+
+    public int longestWPI(int[] hours) {
+        int cnt = 0, ans = 0, len = 0;
+        for (int i = 0; i < hours.length; i++) {
+            if (hours[i] > 8) {
+                cnt++;
+                len++;
+            } else {
+                if (cnt > 1) {
+                    len++;
+                }
+                cnt = Math.max(cnt - 1, 0);
+            }
+        }
+        return ans;
+    }
+
+    public int numEquivDominoPairs(int[][] dominoes) {
+        int[][] array = new int[10][10];
+        for (int i = 0; i < dominoes.length; i++) {
+            int x = dominoes[i][0];
+            int y = dominoes[i][1];
+            array[x][y]++;
+            if (x != y) {
+                array[y][x]++;
+            }
+        }
+        int ans = 0;
+        for (int i = 1; i < 10; i++) {
+            for (int j = 1; j <= i ; j++) {
+                ans += array[j][i] * (array[j][i] - 1) / 2;
+            }
+        }
+        return ans;
+    }
+
+    public int mctFromLeafValues(int[] arr) {
+        int ans = 0, sz = arr.length;
+        while (sz > 1) {
+            int id = 0, Min = 300, pos = 0;
+            for (int i = 1; i < sz; i++) {
+                int val = arr[i] * arr[i - 1];
+                if (val < Min) {
+                    pos = i - 1;
+                    Min = val;
+                }
+            }
+            ans += Min;
+            for (int i = 0; i < sz; i++) {
+                if (i == pos) {
+                    arr[id++] = Math.max(arr[pos], arr[pos + 1]);
+                    i++;
+                } else {
+                    arr[id++] = arr[i];
+                }
+            }
+            sz--;
+        }
+        return ans;
+    }
+
+    public int[] shortestAlternatingPaths(int n, int[][] red_edges, int[][] blue_edges) {
+        int[][][] dp = new int[105][105][2];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    dp[i][j][0] = dp[i][j][1] = -1;
+                }
+            }
+        }
+        for (int i = 0; i < red_edges.length; i++) {
+            int x = red_edges[i][0];
+            int y = red_edges[i][1];
+            if (x != y) {
+                dp[x][y][0] = 1;
+            }
+        }
+        for (int i = 0; i < blue_edges.length; i++) {
+            int x = blue_edges[i][0];
+            int y = blue_edges[i][1];
+            if (x != y) {
+                dp[x][y][1] = 1;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.format("dp[%d][%d]=%d ", i, j, dp[i][j][0]);
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < n; k++) {
+                    dp[i][j][0] = Math.min(dp[i][j][0], dp[i][k][1] + dp[k][j][0]);
+                    dp[i][j][1] = Math.min(dp[i][j][1], dp[i][k][0] + dp[k][j][1]);
+                }
+            }
+        }
+        int[] ans = new int[n];
+        for (int i = 1; i < n; i++) {
+            if (dp[0][i][0] > 0 && dp[0][i][1] > 0) {
+                ans[i] = Math.min(dp[0][i][0], dp[0][i][1]);
+            } else if (dp[0][i][0] > 0) {
+                ans[i] = dp[0][i][0];
+            } else if (dp[0][i][1] > 0) {
+                ans[i] = dp[0][i][1];
+            }
+        }
+        return ans;
+    }
+
+    public int stoneGameII(int[] piles) {
+        int n = piles.length;
+        int[][] dp = new int[n + 1][n + 1];
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                if (i == j) {
+                    dp[i][j] = piles[i];
+                }
+
+            }
+        }
+        return 0;
+    }
+
+    private int getMaxSqure(int[][] dp, int cur, int i, int j) {
+        if (i == 0 || j == 0) {
+            return 1;
+        }
+        int maxSqure = Math.min(dp[i][j] / 200, dp[i][j] % 200);
+//        System.out.format("i=%d, j=%d, maxSqure=%d\n", i, j, maxSqure);
+        if (maxSqure <= cur) {
+            return cur;
+        }
+        for (int k = maxSqure; k > cur ; k--) {
+            if (dp[i - k + 1][j] % 200 >= k && dp[i][j - k + 1] / 200 >= k) {
+                return k;
+            }
+        }
+        return cur;
+    }
+
+    public int largest1BorderedSquare(int[][] grid) {
+        int ans = 0;
+        int[][] dp = new int[grid.length + 1][grid[0].length + 1];
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == 1) {
+                    if (i > 0 && j > 0) {
+                        dp[i][j] = dp[i][j - 1] % 200 + dp[i - 1][j] / 200 * 200 + 201;
+                    } else if (i > 0) {
+                        dp[i][j] = dp[i - 1][j] / 200 * 200 + 201;
+                    } else if (j > 0) {
+                        dp[i][j] = dp[i][j - 1] % 200 + 201;
+                    } else {
+                        dp[i][j] = 201;
+                    }
+                }
+            }
+        }
+//        for (int i = 0; i < dp.length; i++) {
+//            for (int j = 0; j < dp[0].length; j++) {
+//                System.out.printf("dp[%d][%d]=%d ", i, j, dp[i][j]);
+//            }
+//            System.out.println();
+//        }
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == 1) {
+                    ans = Math.max(getMaxSqure(dp, ans, i, j), ans);
+//                    System.out.format("i=%d, j=%d, ans=%d\n", i, j, ans);
+                }
+            }
+        }
+        return ans * ans;
     }
 }
 
@@ -291,7 +474,10 @@ public class Main {
 //        int[][] B = {};
 //        System.out.println(solution.largestOverlap(A, B));
 //        String str = "abcabcababcc";
-//        int[][] grid = {{0, 0, 0},{1, 1, 0}, {1, 1, 0}};
-        System.out.println(solution);
+        int n = 3;
+        int[][] red_edges = {{0,1},{1,2}}, blue_edges = {};
+        int[] piles = {2,7,9,4,4};
+        int[][] grid = {{1,1,1},{1,0,1},{1,1,1}};
+        System.out.println(solution.largest1BorderedSquare(grid));
     }
 }
