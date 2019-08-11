@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-//CHECKSTYLE:OFF
 class Solution {
     public int longestSubstring(String s, int k) {
         return 0;
@@ -396,72 +395,6 @@ class Solution {
         }
         return ans;
     }
-
-    public int stoneGameII(int[] piles) {
-        int n = piles.length;
-        int[][] dp = new int[n + 1][n + 1];
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                if (i == j) {
-                    dp[i][j] = piles[i];
-                }
-
-            }
-        }
-        return 0;
-    }
-
-    private int getMaxSqure(int[][] dp, int cur, int i, int j) {
-        if (i == 0 || j == 0) {
-            return 1;
-        }
-        int maxSqure = Math.min(dp[i][j] / 200, dp[i][j] % 200);
-//        System.out.format("i=%d, j=%d, maxSqure=%d\n", i, j, maxSqure);
-        if (maxSqure <= cur) {
-            return cur;
-        }
-        for (int k = maxSqure; k > cur ; k--) {
-            if (dp[i - k + 1][j] % 200 >= k && dp[i][j - k + 1] / 200 >= k) {
-                return k;
-            }
-        }
-        return cur;
-    }
-
-    public int largest1BorderedSquare(int[][] grid) {
-        int ans = 0;
-        int[][] dp = new int[grid.length + 1][grid[0].length + 1];
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] == 1) {
-                    if (i > 0 && j > 0) {
-                        dp[i][j] = dp[i][j - 1] % 200 + dp[i - 1][j] / 200 * 200 + 201;
-                    } else if (i > 0) {
-                        dp[i][j] = dp[i - 1][j] / 200 * 200 + 201;
-                    } else if (j > 0) {
-                        dp[i][j] = dp[i][j - 1] % 200 + 201;
-                    } else {
-                        dp[i][j] = 201;
-                    }
-                }
-            }
-        }
-//        for (int i = 0; i < dp.length; i++) {
-//            for (int j = 0; j < dp[0].length; j++) {
-//                System.out.printf("dp[%d][%d]=%d ", i, j, dp[i][j]);
-//            }
-//            System.out.println();
-//        }
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] == 1) {
-                    ans = Math.max(getMaxSqure(dp, ans, i, j), ans);
-//                    System.out.format("i=%d, j=%d, ans=%d\n", i, j, ans);
-                }
-            }
-        }
-        return ans * ans;
-    }
 }
 
 public class Main {
@@ -474,10 +407,8 @@ public class Main {
 //        int[][] B = {};
 //        System.out.println(solution.largestOverlap(A, B));
 //        String str = "abcabcababcc";
-        int n = 3;
-        int[][] red_edges = {{0,1},{1,2}}, blue_edges = {};
         int[] piles = {2,7,9,4,4};
-        int[][] grid = {{1,1,1},{1,0,1},{1,1,1}};
-        System.out.println(solution.largest1BorderedSquare(grid));
+        int d = 30, f = 30, target = 500;
+        System.out.println(solution);
     }
 }
