@@ -1,4 +1,3 @@
-//CHECKSTYLE:OFF
 package Leetcode;
 
 public class ListNode {

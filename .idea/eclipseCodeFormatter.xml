@@ -5,7 +5,7 @@
       <ProjectSpecificProfile>
         <option name="formatter" value="ECLIPSE" />
         <option name="optimizeImports" value="false" />
-        <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../kuaishou-build-tools/src/main/resources/kuaishou-java-formatter-1.4.xml" />
+        <option name="pathToConfigFileJava" value="$USER_HOME$/code/git/kuaishou-build-tools/src/main/resources/kuaishou-java-formatter-1.4.xml" />
         <option name="selectedJavaProfile" value="kuaishou-java-formatter-1.4" />
       </ProjectSpecificProfile>
     </option>

@@ -5,13 +5,45 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+class ThreadTest {
+    private void test() {
+        Foo foo = new Foo();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        String[] print = {"first", "second", "third"};
+        executorService.submit(() -> {
+            try {
+                foo.second(() -> System.out.println(print[1]));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        executorService.submit(() -> {
+            try {
+                foo.first(() -> System.out.println(print[0]));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        executorService.submit(() -> {
+            try {
+                foo.third(() -> System.out.println(print[2]));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+}
 class Solution {
     public int longestSubstring(String s, int k) {
         return 0;
@@ -395,6 +427,245 @@ class Solution {
         }
         return ans;
     }
+
+    public int countCharacters(String[] words, String chars) {
+        int[] cnt = new int[26], cur = new int[26];
+        for (char ch : chars.toCharArray()) {
+            cnt[ch - 'a']++;
+        }
+        int ans = 0;
+        for (String word : words) {
+            boolean ok = true;
+            for (char ch : word.toCharArray()) {
+                cur[ch - 'a']++;
+                if (cur[ch - 'a'] > cnt[ch - 'a']) {
+                    ok = false;
+                    break;
+                }
+            }
+            if (ok) {
+                ans += word.length();
+            }
+            Arrays.fill(cur, 0);
+        }
+        return ans;
+    }
+
+    public int maxLevelSum(TreeNode root) {
+        int maxValue = Integer.MIN_VALUE, ans = 1, curValue = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        int leftNum = 1, cur = 0, level = 1;
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            curValue += node.val;
+            leftNum--;
+            if (node.left != null) {
+                queue.offer(node.left);
+                cur++;
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+                cur++;
+            }
+            if (leftNum == 0 && cur > 0) {
+                if (curValue > maxValue) {
+                    maxValue = curValue;
+                    ans = level;
+                }
+                level++;
+                curValue = 0;
+                leftNum = cur;
+                cur = 0;
+            }
+        }
+        return ans;
+    }
+
+    private int[][] dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+
+    private void bfs(int[][] grid, int[][] dp, int[][] vis, int val) {
+        int n = grid.length;
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(val);
+        vis[val / 1000][val % 1000] = 0;
+        while (!queue.isEmpty()) {
+            int pos = queue.poll();
+            int x = pos / 1000, y = pos % 1000;
+            for (int[] dir : dirs) {
+                int x0 = x + dir[0], y0 = y + dir[1];
+                if (x0 >= 0 && x0 < n && y0 >= 0 && y0 < n
+                        && grid[x0][y0] == 0 && vis[x0][y0] == -1) {
+                    vis[x0][y0] = vis[x][y] + 1;
+                    if (vis[x0][y0] < dp[x0][y0]) {
+                        dp[x0][y0] = vis[x0][y0];
+                        queue.offer(x0 * 1000 + y0);
+                    }
+                }
+            }
+        }
+    }
+
+    public int maxDistance(int[][] grid) {
+        int n = grid.length, ans = -1;
+        int[][] dp = new int[n + 1][n + 1];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 0) {
+                    dp[i][j] = 1000;
+                }
+            }
+        }
+        int[][] vis = new int[n + 1][n + 1];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    for (int[] array :  vis) {
+                        Arrays.fill(array, -1);
+                    }
+                    bfs(grid, dp, vis, i * 1000 + j);
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (dp[i][j] != 1000 && dp[i][j] != 0) {
+                    ans = Math.max(ans, dp[i][j]);
+                }
+            }
+        }
+        return ans;
+    }
+
+    public String lastSubstring(String s) {
+        if (s.length() == 1) {
+            return s;
+        }
+        String ans = s, temp;
+        for (int i = 1; i < s.length(); i++) {
+            temp = s.substring(i);
+            if (temp.compareTo(ans) > 0) {
+                ans = temp;
+            }
+        }
+        return ans;
+    }
+
+    public List<String> invalidTransactions(String[] transactions) {
+        List<String> ans = new ArrayList<>();
+        List<Inner> innerList = Arrays.stream(transactions) //
+                .map(Inner::of) //
+                .collect(Collectors.toList());
+        ans.addAll(innerList.stream() //
+                .filter(Inner::invalid) //
+                .map(Inner::toString).collect(toList()));
+        innerList = innerList.stream() //
+                .filter(inner -> !inner.invalid()) //
+                .collect(toList());
+        if (innerList.size() > 1) {
+            Collections.sort(innerList);
+        }
+        return ans;
+    }
+
+    static class Inner implements Comparable<Inner> {
+        private String name;
+        private int time;
+        private int amount;
+        private String city;
+        private Inner(){}
+        private Inner(String name, int time, int amount, String city) {
+            this.name = name;
+            this.time = time;
+            this.amount = amount;
+            this.city = city;
+        }
+        public static Inner of(String transaction) {
+            String[] array = transaction.split(",");
+            return new Inner(array[0], Integer.valueOf(array[1]),
+                    Integer.valueOf(array[2]), array[3]);
+        }
+
+        public boolean invalid() {
+            return amount > 1000;
+        }
+        public int compareTo(Inner inner) {
+            if (name.equals(inner.name)) {
+                return time - inner.time;
+            }
+            return name.compareTo(inner.name);
+        }
+        @Override
+        public String toString() {
+            return String.format("%s,%d,%d,%s", name, time, amount, city);
+        }
+    }
+
+    public ListNode removeZeroSumSublists(ListNode head) {
+        ListNode pHead = new ListNode(0);
+        pHead.next = head;
+        ListNode[] list = new ListNode[1005];
+        int id = 0;
+        while (head != null) {
+            list[id] = head;
+            int pos = findZeroCnt(list, id);
+            if (pos < 0) {
+                id++;
+            } else {
+                id = pos;
+            }
+            head = head.next;
+        }
+        System.out.println(list);
+        if (id == 0) {
+            return null;
+        }
+        list[id - 1].next = null;
+        for (int i = id - 1; i > 0 ; i--) {
+            list[i - 1].next = list[i];
+        }
+        return list[0];
+    }
+    private int findZeroCnt(ListNode[] list, int id) {
+        int val = 0;
+        for (int i = id; i >= 0; i--) {
+            if (val + list[i].val == 0) {
+                return i;
+            }
+            val += list[i].val;
+        }
+        return -1;
+    }
+
+    private int getMaxSubArraySum(int[] arr, int[] maxLArray, int[] maxRArray) {
+        int curL = 0, curR = 0, maxValue = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            int newLValue = arr[i] + curL;
+            int newRValue = arr[arr.length - 1 - i] + curR;
+            if (newLValue > maxValue) {
+                maxValue = newLValue;
+            }
+            curL = newLValue > 0 ? newLValue : 0;
+            curR = newRValue > 0 ? newRValue : 0;
+            maxLArray[i] = newLValue;
+            maxRArray[i] = newRValue;
+        }
+        return maxValue;
+    }
+    public int maximumSum(int[] arr) {
+        if (arr.length == 1) {
+            return arr[0];
+        }
+        int[] maxArray1 = new int[arr.length], maxArray2 = new int[arr.length];
+        int ans = getMaxSubArraySum(arr, maxArray1, maxArray2);
+        for (int i = 1; i < arr.length - 1; i++) {
+            if (arr[i] < 0) {
+                int left = maxArray1[i - 1], right = maxArray2[arr.length - 2 - i];
+                ans = Math.max(ans, left + right);
+            }
+        }
+        return ans;
+    }
 }
 
 public class Main {
@@ -402,13 +673,7 @@ public class Main {
 //        FileInputStream file = new FileInputStream('in.txt');
 //        System.setIn(file);
         Solution solution = new Solution();
-//        System.out.println(solution.queryString("0110", 3));
-//        int[][] A = {};
-//        int[][] B = {};
-//        System.out.println(solution.largestOverlap(A, B));
-//        String str = "abcabcababcc";
-        int[] piles = {2,7,9,4,4};
-        int d = 30, f = 30, target = 500;
-        System.out.println(solution);
+        int[] arr = {-3,2,-1,4};
+        System.out.println(solution.maximumSum(arr));
     }
 }
