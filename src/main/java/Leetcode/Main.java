@@ -5,7 +5,6 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -15,7 +14,6 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
 class ThreadTest {
     private void test() {
         Foo foo = new Foo();
@@ -551,56 +549,6 @@ class Solution {
         return ans;
     }
 
-    public List<String> invalidTransactions(String[] transactions) {
-        List<String> ans = new ArrayList<>();
-        List<Inner> innerList = Arrays.stream(transactions) //
-                .map(Inner::of) //
-                .collect(Collectors.toList());
-        ans.addAll(innerList.stream() //
-                .filter(Inner::invalid) //
-                .map(Inner::toString).collect(toList()));
-        innerList = innerList.stream() //
-                .filter(inner -> !inner.invalid()) //
-                .collect(toList());
-        if (innerList.size() > 1) {
-            Collections.sort(innerList);
-        }
-        return ans;
-    }
-
-    static class Inner implements Comparable<Inner> {
-        private String name;
-        private int time;
-        private int amount;
-        private String city;
-        private Inner(){}
-        private Inner(String name, int time, int amount, String city) {
-            this.name = name;
-            this.time = time;
-            this.amount = amount;
-            this.city = city;
-        }
-        public static Inner of(String transaction) {
-            String[] array = transaction.split(",");
-            return new Inner(array[0], Integer.valueOf(array[1]),
-                    Integer.valueOf(array[2]), array[3]);
-        }
-
-        public boolean invalid() {
-            return amount > 1000;
-        }
-        public int compareTo(Inner inner) {
-            if (name.equals(inner.name)) {
-                return time - inner.time;
-            }
-            return name.compareTo(inner.name);
-        }
-        @Override
-        public String toString() {
-            return String.format("%s,%d,%d,%s", name, time, amount, city);
-        }
-    }
-
     public ListNode removeZeroSumSublists(ListNode head) {
         ListNode pHead = new ListNode(0);
         pHead.next = head;
@@ -636,36 +584,6 @@ class Solution {
         }
         return -1;
     }
-
-    private int getMaxSubArraySum(int[] arr, int[] maxLArray, int[] maxRArray) {
-        int curL = 0, curR = 0, maxValue = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            int newLValue = arr[i] + curL;
-            int newRValue = arr[arr.length - 1 - i] + curR;
-            if (newLValue > maxValue) {
-                maxValue = newLValue;
-            }
-            curL = newLValue > 0 ? newLValue : 0;
-            curR = newRValue > 0 ? newRValue : 0;
-            maxLArray[i] = newLValue;
-            maxRArray[i] = newRValue;
-        }
-        return maxValue;
-    }
-    public int maximumSum(int[] arr) {
-        if (arr.length == 1) {
-            return arr[0];
-        }
-        int[] maxArray1 = new int[arr.length], maxArray2 = new int[arr.length];
-        int ans = getMaxSubArraySum(arr, maxArray1, maxArray2);
-        for (int i = 1; i < arr.length - 1; i++) {
-            if (arr[i] < 0) {
-                int left = maxArray1[i - 1], right = maxArray2[arr.length - 2 - i];
-                ans = Math.max(ans, left + right);
-            }
-        }
-        return ans;
-    }
 }
 
 public class Main {
@@ -673,7 +591,7 @@ public class Main {
 //        FileInputStream file = new FileInputStream('in.txt');
 //        System.setIn(file);
         Solution solution = new Solution();
-        int[] arr = {-3,2,-1,4};
-        System.out.println(solution.maximumSum(arr));
+        String str = "bcbcbcababa";
+        System.out.println(solution);
     }
 }
