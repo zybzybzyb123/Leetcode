@@ -1,6 +1,6 @@
-package Leetcode;
+package Leetcode.extra;
 
-class Foo {
+public class Foo {
 
     public Foo() {
         

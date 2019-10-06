@@ -3,6 +3,7 @@ import java.util.Map;
 import java.util.LinkedList;
 
 class Solution {
+    //非递归解法
     public Integer getMax(Integer lMax, Integer rMax){
         if(lMax == null && rMax == null){
             return null;
@@ -58,5 +59,27 @@ class Solution {
             stack.push(nums[i]);
         }
         return root;
+    }
+
+    //递归解法
+    private TreeNode constructMaximumBinaryTree(int[] nums, int begin, int end) {
+        if (begin == end) {
+            return null;
+        }
+        int maxVal = nums[begin], pos = begin;
+        for (int i = begin + 1; i < end; i++) {
+            if (nums[i] > maxVal) {
+                maxVal = nums[i];
+                pos = i;
+            }
+        }
+        TreeNode root = new TreeNode(maxVal);
+        root.left = constructMaximumBinaryTree(nums, begin, pos);
+        root.right = constructMaximumBinaryTree(nums, pos + 1, end);
+        return root;
+    }
+
+    public TreeNode constructMaximumBinaryTree(int[] nums) {
+        return constructMaximumBinaryTree(nums, 0, nums.length);
     }
 }

@@ -1,6 +1,6 @@
-package Leetcode;
+package Leetcode.extra;
 
-class H2O {
+public class H2O {
     private static volatile int cnt = 0;
     public H2O() {
 
