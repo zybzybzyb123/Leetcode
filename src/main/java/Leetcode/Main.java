@@ -1,6 +1,9 @@
 package Leetcode;
 
+import Leetcode.dataStructure.base.ListNode;
 import Leetcode.dataStructure.base.Node;
+import Leetcode.dataStructure.base.TreeNode;
+
 import java.util.*;
 
 class Solution {
@@ -52,6 +55,8 @@ public class Main {
         // pairs.add(Arrays.asList(val[0], val[1]));
         // }
         // System.out.println(solution.smallestStringWithSwaps(s, pairs));
+        String s = "ababacb";
+        int k = 3;
         System.out.println(solution);
     }
 
