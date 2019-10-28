@@ -5,7 +5,6 @@
       <ProjectSpecificProfile>
         <option name="formatter" value="ECLIPSE" />
         <option name="pathToConfigFileJava" value="$USER_HOME$/config/idea/CodeFormatter.xml" />
-        <option name="selectedJavaProfile" value="eclipse-style" />
       </ProjectSpecificProfile>
     </option>
   </component>
