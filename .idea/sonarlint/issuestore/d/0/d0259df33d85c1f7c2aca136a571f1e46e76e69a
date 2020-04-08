@@ -1,264 +1,13 @@
 
-F
-java:S1066ù"/Merge this if statement with the enclosing one.(È£·
-n	java:S127Í"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
-n	java:S127Ï"XRefactor the code in order to not assign to this loop counter from within the loop body.(¯ÀÚè
-n	java:S127Ö"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
-n	java:S127Ù"XRefactor the code in order to not assign to this loop counter from within the loop body.(¯ÀÚè
-n	java:S127¿"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
-n	java:S127Ä"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
-n	java:S127Ç"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
-n	java:S127Ê"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
-m	java:S135g"YReduce the total number of break and continue statements in this loop to use at most one.(Ìˆæ
-n	java:S135`"YReduce the total number of break and continue statements in this loop to use at most one.(»”›Ù
-Y
-java:S1155n">Use isEmpty() to check whether the collection is empty or not.(á£õŸûÿÿÿÿ
-k	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊĞæœşÿÿÿÿ
-f	java:S117à"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ«ò$
-g	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Í¬æ
-l	java:S117ª"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ’…µüÿÿÿÿ
-g	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò”€Š
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-Y
-java:S2259¸"BA "NullPointerException" could be thrown; "head" is nullable here.(ˆÏ 
-Z
-java:S1596Ä">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(÷ƒ¨öúÿÿÿÿ
-Z
-java:S1596Ê">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(÷ƒ¨öúÿÿÿÿ
-U
-java:S1596Î	">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(ª
-S
-java:S2589È"7Remove this expression which always evaluates to "true"(ÿ¨÷‹øÿÿÿÿ
-G
-java:S1128	"1Remove this unused import 'java.math.BigInteger'.(»Çâ€
-B
-java:S1172",Remove this unused method parameter "pairs".(µÓ²ï
-m
-java:S3776Y"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(ÊĞæœşÿÿÿÿ
->
-java:S1659›"'Declare "beforeCur" on a separate line.(œÏ°
-:
-java:S1659›"#Declare "after" on a separate line.(œÏ°
-=
-java:S1659›"&Declare "afterCur" on a separate line.(œÏ°
-;
-java:S1659°"$Declare "second" on a separate line.(ñ—›ò
-P
-java:S1117½"9Rename "cnt" which hides the field declared at line 1108.(³Î÷¢
-n
-java:S3776È"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Àê¡ÿÿÿÿÿ
-;
-java:S1659Ö"Declare "y" on a separate line.(’€”ğıÿÿÿÿ
-@
-java:S1659è"$Declare "minKey" on a separate line.(£Ô™üÿÿÿÿ
-:
-java:S1659÷"#Declare "kSize" on a separate line.(òÆä¼
-P
-java:S1117õ"9Rename "cnt" which hides the field declared at line 1108.(¼ç»¼
-h
-java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(˜öø
-:
-java:S1659”"$Declare "second" on a separate line.(Ğ¦á
-P
-java:S1117›"9Rename "cnt" which hides the field declared at line 1108.(Œ—ç½
-n
-java:S3776¾"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(·ÁôÁúÿÿÿÿ
-8
-java:S1659Ñ"!Declare "end" on a separate line.(Äñº³
-h
-java:S3776à"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(Ñ«ò$
-8
-java:S1659á"!Declare "ans" on a separate line.(ÁÕ§Ù
-=
-java:S1659ä"!Declare "cur" on a separate line.(”¤¦úÿÿÿÿ
-U
-java:S1117ä"9Rename "cnt" which hides the field declared at line 1108.(”¤¦úÿÿÿÿ
-;
-java:S1659‹"$Declare "maxVal" on a separate line.(ìÊ¶Ã
-?
-java:S1659Œ"#Declare "right" on a separate line.(ø×å˜şÿÿÿÿ
-<
-java:S1659”" Declare "dy" on a separate line.(ßÑÊıÿÿÿÿ
-;
-java:S1659–"Declare "y" on a separate line.(ÒŸÈ™ÿÿÿÿÿ
-n
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(–•…ğşÿÿÿÿ
-R
-java:S1854Ô"6Remove this useless assignment to local variable "dp".(§¸’…üÿÿÿÿ
-?	java:S108Ö")Either remove or fill this block of code.(¯Äâ
-M
-java:S1854Ş"6Remove this useless assignment to local variable "dp".(İ«£í
-8
-java:S1659è"!Declare "avg" on a separate line.(èÎ¤î
-8
-java:S1659è"!Declare "ans" on a separate line.(èÎ¤î
-P
-java:S1117ã"9Rename "cnt" which hides the field declared at line 1108.(Î¢Àì
-p
-java:S3012ƒ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(Ú¥·…
-u
-java:S3012‰"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(¯©àùÿÿÿÿ
->
-java:S1659ö""Declare "cnt2" on a separate line.(©äœÍûÿÿÿÿ
-=
-java:S1659Ã"!Declare "end" on a separate line.(ùàñùüÿÿÿÿ
-=
-java:S1659Ã"!Declare "ans" on a separate line.(ùàñùüÿÿÿÿ
-n
-java:S3776Í"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¬ ØŒüÿÿÿÿ
-<
-java:S1659İ" Declare "to" on a separate line.(õËÈğşÿÿÿÿ
-<
-java:S1659İ" Declare "id" on a separate line.(õËÈğşÿÿÿÿ
-T	java:S106ê"9Replace this use of System.out or System.err by a logger.(õƒîÿÿÿÿÿ
-8
-java:S1659÷"!Declare "len" on a separate line.(¬‰¥¥
-u
-java:S3012Œ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(ÿ¯œÇøÿÿÿÿ
-8
-java:S1659“""Declare "temp" on a separate line.(â†©M
-=
-java:S1172"&Remove these unused method parameters.(¿È˜ã
-6
-java:S1659«"Declare "c" on a separate line.(Ø¼ûÁ
-i
-java:S3776¾"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(°†«´
->
-java:S1659Æ""Declare "mat2" on a separate line.(ŞÎÅÓüÿÿÿÿ
-;
-java:S1659å"Declare "m" on a separate line.(ƒ–³¥ÿÿÿÿÿ
-T
-java:S1117ç"8Rename "dir" which hides the field declared at line 985.(œğ÷§øÿÿÿÿ
-<
-java:S1659è" Declare "ry" on a separate line.(¥‘üœûÿÿÿÿ
-U
-java:S1117¥"9Rename "cnt" which hides the field declared at line 1108.(İ‹úÿÿÿÿ
-N	java:S106µ"9Replace this use of System.out or System.err by a logger.(ƒÚáB
-n
-java:S3776å"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ç€ƒúÿÿÿÿ
-;
-java:S1659è"Declare "m" on a separate line.(ƒ–³¥ÿÿÿÿÿ
-5
-java:S1659ï"Declare "y" on a separate line.(Üu
-<
-java:S1659ı" Declare "ry" on a separate line.(Ä€Ãéøÿÿÿÿ
-i
-java:S3776†"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(”³º
-;
-java:S1659Š"Declare "m" on a separate line.(ƒ–³¥ÿÿÿÿÿ
-9
-java:S1659""Declare "step" on a separate line.(¥Êãİ
-6
-java:S1659š"Declare "y" on a separate line.(ş”ßÄ
-7
-java:S1659" Declare "y1" on a separate line.(Ãóşá
+_
+java:S2094"BRemove this empty class, write its code or make it an "interface".(¬ÙÅŠ8®Ÿ½–•.
 ^
-java:S5361­"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ßõ©,
-^
-java:S5361­"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ßõ©,
-?
-java:S1659¹"#Declare "right" on a separate line.(£ëÖ÷ùÿÿÿÿ
-=
-java:S1659¼"!Declare "end" on a separate line.(¥ô²Ïûÿÿÿÿ
-;
-java:S1659÷"Declare "y" on a separate line.(á¾‚½üÿÿÿÿ
-6
-java:S1659ÿ"Declare "y" on a separate line.(¤×è
-X
-java:S1126Š	"AReplace this if-then-else statement by a single return statement.(íõÇÀ
-i
-java:S3776	"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Í´‘Ç
-O	java:S106²	"9Replace this use of System.out or System.err by a logger.(ÏÂä¡
-T	java:S106´	"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
-A
-java:S1659º	"%Declare "pruduct" on a separate line.(¬ı­åıÿÿÿÿ
-V
-java:S1117Ï	":Rename "list" which hides the field declared at line 1369.(¤Êí…ıÿÿÿÿ
-?
-java:S1659ß	"#Declare "right" on a separate line.(ÑÕ¹³ùÿÿÿÿ
-8
-java:S1659á	"!Declare "sum" on a separate line.(¿­á©
-P
-java:S1117ï	"9Rename "cnt" which hides the field declared at line 1108.(¢ó¢‰
-8
-java:S1659£
-"!Declare "ans" on a separate line.(ÔŞé¢
-P
-java:S1117£
-"9Rename "cnt" which hides the field declared at line 1108.(ÔŞé¢
-p
-java:S3012Æ
-"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(­šµ¦
-;
-java:S1659ß
-"$Declare "addVal" on a separate line.(ŞÈ’õ
-6
-java:S1659ş
-"Declare "n" on a separate line.(ôé°Ä
-n
-java:S3776•"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(±Ò³¡ûÿÿÿÿ
-6
-java:S1659š"Declare "m" on a separate line.(—êú
-6
-java:S1659š"Declare "n" on a separate line.(—êú
-P
-java:S1117—"9Rename "dirs" which hides the field declared at line 865.(œÂÒ¿
-;
-java:S1659¦"Declare "y" on a separate line.(À†¼£üÿÿÿÿ
->
-java:S1659¦""Declare "curK" on a separate line.(À†¼£üÿÿÿÿ
-T
-java:S1117ª"8Rename "dir" which hides the field declared at line 985.(œğ÷§øÿÿÿÿ
-<
-java:S1659«" Declare "ry" on a separate line.(¥‘üœûÿÿÿÿ
-9
-java:S1659Ã""Declare "temp" on a separate line.(ş˜î§
-P
-java:S1117Ã"9Rename "cnt" which hides the field declared at line 1108.(ş˜î§
-i
-java:S3776Ï"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(øÔü¹
-Q
-java:S1117Ú":Rename "list" which hides the field declared at line 1369.(Öæ
-8
-java:S1659Ü"!Declare "val" on a separate line.(³çÒ£
-=
-java:S1172ô"&Remove these unused method parameters.(ùû‰
-P
-java:S3400õ"9Remove this method and declare a constant for this value.(È¸å
-n
-java:S3776ø"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(´¯êÉùÿÿÿÿ
-7
-java:S1659Ü" Declare "to" on a separate line.(–‘±»
-i
-java:S3776ë"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(Ñá¤Ü
-8
-java:S1659–"!Declare "cnt" on a separate line.(¯×å
-P
-java:S1117–"9Rename "cnt" which hides the field declared at line 1108.(¯×å
->
-java:S1659¤""Declare "flag" on a separate line.(ææãşÿÿÿÿ
-M
-java:S1854µ"6Remove this useless assignment to local variable "ch".(ë£ıú
-n
-java:S3776´"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ÉÏÀ¸ıÿÿÿÿ
-P
-java:S1117Á"9Rename "cnt" which hides the field declared at line 1108.(ú®¸È
-ˆ
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ
-“
-java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ
-T	java:S106”"9Replace this use of System.out or System.err by a logger.(¼ä€ÿüÿÿÿÿ
-C
-java:S1481Ô"'Remove this unused "dp" local variable.(§¸’…üÿÿÿÿ
->
-java:S1481Ş"'Remove this unused "dp" local variable.(İ«£í
-D
-java:S1481¤"(Remove this unused "ans" local variable.(…„¥Éûÿÿÿÿ
-W	java:S125"<This block of commented-out lines of code should be removed.(‹µ³¿üÿÿÿÿ
-W	java:S125®"<This block of commented-out lines of code should be removed.(’¹ì³úÿÿÿÿ
-R	java:S125”	"<This block of commented-out lines of code should be removed.(±š®
-W	java:S125–	"<This block of commented-out lines of code should be removed.(Œ±¦—ùÿÿÿÿ
-R	java:S125ï
-"<This block of commented-out lines of code should be removed.(ªªš
-R	java:S125ş"<This block of commented-out lines of code should be removed.(«İá
-W	java:S125"<This block of commented-out lines of code should be removed.(°ÛËõşÿÿÿÿ
+java:S1854"<Remove this useless assignment to local variable "solution".(ËÊüşÿÿÿÿ8Ê“Ü••.
+
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8Ê“Ü••.
+O
+java:S1481"-Remove this unused "solution" local variable.(ËÊüşÿÿÿÿ8Ê“Ü••.
+™
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8Ê“Ü••.
+]	java:S125"<This block of commented-out lines of code should be removed.(°ÛËõşÿÿÿÿ8»Ÿ‚••.

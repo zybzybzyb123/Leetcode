@@ -1,0 +1,7 @@
+
+S
+java:S1854"6Remove this useless assignment to local variable "ch".(λ£ύϊ8ιϋΏ••.
+Y
+java:S2589"7Remove this expression which always evaluates to "true"(Ό“ΰνόÿÿÿÿ8ιϋΏ••.
+0
+java:S1220""Move this file to a named package.
