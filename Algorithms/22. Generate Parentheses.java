@@ -4,28 +4,33 @@
  * AC了，其实本质就是一个带条件的递归
  */
 class Solution {
-    //temp保存括号序列的字符数组, ans是答案数组, cur表示当前容量, n是括号数，
-    // leftCnt是当前左括号的总数, left是匹配完右括号剩余的左括号数
-    private void dfs(char[] temp, List<String> ans, int cur, int n, int leftCnt, int left){
-        if(cur == 2 * n){
-            ans.add(new String(temp));
+    /**
+     * @param ans 结果数组
+     * @param array
+     * @param cur 当前位置
+     * @param leftBracketCount 左括号计数
+     * @param rightBracketCount 右括号计数
+     * @param n 括号对数
+     */
+    private void dfs(List<String> ans, char[] array, int cur, int leftBracketCount, int rightBracketCount, int n) {
+        if (cur == 2 * n) {
+            ans.add(new String(array));
             return;
         }
-        if(left > 0){
-            temp[cur] = ')';
-            dfs(temp, ans, cur + 1, n, leftCnt, left - 1);
+        if (leftBracketCount < n) {
+            array[cur] = '(';
+            dfs(ans, array, cur + 1, leftBracketCount + 1, rightBracketCount, n);
         }
-        if(leftCnt < n){
-            temp[cur] = '(';
-            dfs(temp, ans, cur + 1, n, leftCnt + 1, left + 1);
+        if (leftBracketCount > rightBracketCount) {
+            array[cur] = ')';
+            dfs(ans, array, cur + 1, leftBracketCount, rightBracketCount + 1, n);
         }
     }
+
     public List<String> generateParenthesis(int n) {
         List<String> ans = new ArrayList<>();
-        if(n <= 0) return ans;
-        char[] temp = new char[2 * n];
-        temp[0] = '(';
-        dfs(temp, ans, 1, n, 1, 1);
+        char[] array = new char[2 * n];
+        dfs(ans, array, 0, 0, 0, n);
         return ans;
     }
 }

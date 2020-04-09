@@ -1,13 +1,15 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-_
-java:S2094"BRemove this empty class, write its code or make it an "interface".(¬ÙÅŠ8®Ÿ½–•.
-^
-java:S1854"<Remove this useless assignment to local variable "solution".(ËÊüþÿÿÿÿ8Ê“Ü••.
 Ž
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8Ê“Ü••.
+java:S1130
+"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8ôÈŽ¾•.
+_
+java:S2094"BRemove this empty class, write its code or make it an "interface".(¬ÙÅŠ8–ÁëÀ•.
+]	java:S125"<This block of commented-out lines of code should be removed.(°ÛËõþÿÿÿÿ8»Ÿ‚••.
 O
-java:S1481"-Remove this unused "solution" local variable.(ËÊüþÿÿÿÿ8Ê“Ü••.
+java:S1481"-Remove this unused "solution" local variable.(ËÊüþÿÿÿÿ8ôÈŽ¾•.
 ™
-java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8Ê“Ü••.
-]	java:S125"<This block of commented-out lines of code should be removed.(°ÛËõþÿÿÿÿ8»Ÿ‚••.
+java:S1130
+"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8ôÈŽ¾•.
+^
+java:S1854"<Remove this useless assignment to local variable "solution".(ËÊüþÿÿÿÿ8ôÈŽ¾•.
