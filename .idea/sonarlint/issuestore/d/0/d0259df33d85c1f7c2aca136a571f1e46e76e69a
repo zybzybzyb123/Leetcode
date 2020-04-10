@@ -1,15 +1,18 @@
 
+t	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¯ÀÚè8˜™×ô•.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-Ž
-java:S1130
-"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8ôÈŽ¾•.
-_
-java:S2094"BRemove this empty class, write its code or make it an "interface".(¬ÙÅŠ8–ÁëÀ•.
-]	java:S125"<This block of commented-out lines of code should be removed.(°ÛËõþÿÿÿÿ8»Ÿ‚••.
-O
-java:S1481"-Remove this unused "solution" local variable.(ËÊüþÿÿÿÿ8ôÈŽ¾•.
+t	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¯ÀÚè8Ë·Ñô•.
+]	java:S125""<This block of commented-out lines of code should be removed.(°ÛËõþÿÿÿÿ8œÀ‚ê•.
 ™
-java:S1130
-"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8ôÈŽ¾•.
+java:S1130!"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8œÀ‚ê•.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ôµ¨úÿÿÿÿ8ÉÓ±ô•.
+t	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8˜™×ô•.
+O
+java:S1481&"-Remove this unused "solution" local variable.(ËÊüþÿÿÿÿ8œÀ‚ê•.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ôµ¨úÿÿÿÿ8ÉÓ±ô•.
+E	java:S108")Either remove or fill this block of code.(å¥ž‡8ÅªÕô•.
+t	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8ÉƒÑô•.
+Ž
+java:S1130!"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8œÀ‚ê•.
 ^
-java:S1854"<Remove this useless assignment to local variable "solution".(ËÊüþÿÿÿÿ8ôÈŽ¾•.
+java:S1854&"<Remove this useless assignment to local variable "solution".(ËÊüþÿÿÿÿ8œÀ‚ê•.
