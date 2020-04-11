@@ -1,0 +1,11 @@
+
+Y
+java:S18547"<Remove this useless assignment to local variable "maxValue".(Ëëïå8üÌà–.
+Y
+java:S18548"7Remove this useless assignment to local variable "ans".(²œæ¨ûÿÿÿÿ8üÌà–.
+Y
+java:S18542"7Remove this useless assignment to local variable "cnt".(İ‹úÿÿÿÿ8üÌà–.
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Á¶Šôûÿÿÿÿ8¼´¥à–.
+0
+java:S1220""Move this file to a named package.
