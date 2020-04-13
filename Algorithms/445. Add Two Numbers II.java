@@ -1,11 +1,7 @@
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
+ * 添加递归解法比较经典
  */
+
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode list = new ListNode(0);
@@ -47,5 +43,50 @@ class Solution {
             list.next = node;
         }
         return list.next;
+    }
+
+    // 递归解法
+    private int flag = 0;
+    private int count(ListNode listNode) {
+        int cnt = 0;
+        while (listNode != null) {
+            cnt++;
+            listNode = listNode.next;
+        }
+        return cnt;
+    }
+    private ListNode addTwoNumbers(ListNode l1, ListNode l2, int cnt1, int cnt2) {
+        if (cnt1 > cnt2) {
+            l1.next = addTwoNumbers(l1.next, l2,  cnt1 - 1, cnt2);
+            int val = l1.val + flag;
+            l1.val = val % 10;
+            flag = val / 10;
+            return l1;
+        }  else {
+            if (cnt1 > 1) {
+                l1.next = addTwoNumbers(l1.next, l2.next,  cnt1 - 1, cnt2 - 1);
+                int val = l1.val + l2.val + flag;
+                l1.val = val % 10;
+                flag = val / 10;
+                return l1;
+            } else {
+                int val = l1.val + l2.val + flag;
+                l1.val = val % 10;
+                flag = val / 10;
+                return l1;
+            }
+        }
+    }
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int cnt1 = count(l1);
+        int cnt2 = count(l2);
+        l1 = cnt1 > cnt2 ? addTwoNumbers(l1, l2, cnt1, cnt2) : addTwoNumbers(l2, l1, cnt2, cnt1);
+        if (flag == 1) {
+            ListNode ans = new ListNode(1);
+            ans.next = l1;
+            return ans;
+        }
+        return l1;
     }
 }
