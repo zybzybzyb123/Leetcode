@@ -3,6 +3,7 @@ package Leetcode;
 import java.io.IOException;
 
 class Solution {
+    
 }
 
 public class Main {
