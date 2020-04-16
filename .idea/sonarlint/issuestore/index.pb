@@ -47,3 +47,29 @@ l
 <src/main/java/Leetcode/dataStructure/base/NestedInteger.java,c/c/cc566737e5173ad22fb09947ae8e0727578a0c14
 P
  Algorithms/385. Mini Parser.java,8/b/8bc98c8ea6f60e7415c0ba88bb6fa82b6f675a31
+w
+G.idea/sonarlint/issuestore/2/f/2f9ecfce31ec6556bbdcbcb4fbf90732d08e60bf,d/4/d46fbf364209960cb493c6b8ba853b4f3ee2a410
+w
+G.idea/sonarlint/issuestore/7/f/7f6bdb2e73433fbe8acd1c80988d0d5ccda7eb11,0/d/0db821b12c91798bda0b61aeed97411a232bcd01
+w
+G.idea/sonarlint/issuestore/a/0/a065fed78947c3aeaf89a48778b410a9cf0b3305,6/0/605e511c1bc23da3a80ae6f6d04b07494ee13de7
+]
+-Algorithms/844. Backspace String Compare.java,8/d/8d52ae764e743dbcd057974619c578dd8321900a
+S
+#151. Reverse Words in a String.java,6/4/64f0360ebecd6f7190498a1da44973dcd789a47f
+<
+Leetcode.iml,0/9/091bedbf9273215310213098b7fe44c7f0d151dc
+_
+/Algorithms/1396. Design Underground System.java,d/7/d7110ae885302eeca13ee92d7755714ae78e1be6
+d
+4Algorithms/1394. Find Lucky Integer in an Array.java,4/e/4e88cb3c70c92648408728b1b9bb60e71980368a
+S
+#Algorithms/1390. Four Divisors.java,f/b/fb85c33991a4afb9f360446d92760a8846a2dcac
+l
+<Algorithms/1389. Create Target Array in the Given Order.java,d/0/d0ca02faeae200b8c1c1592f9ba41cda571cb54d
+S
+#Algorithms/621. Task Scheduler.java,8/8/88770efae709d5dbe603ea031b36fd01b4979d79
+a
+1Algorithms/1408. String Matching in an Array.java,6/a/6a6c6084e120815e06e29d6ef87920d3a31563b5
+_
+/Algorithms/416. Partition Equal Subset Sum.java,d/0/d017153382213d85b6f919d15d4ed0b3620e40cf
