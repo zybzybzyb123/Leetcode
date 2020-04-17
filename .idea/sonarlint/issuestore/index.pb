@@ -55,8 +55,6 @@ w
 G.idea/sonarlint/issuestore/a/0/a065fed78947c3aeaf89a48778b410a9cf0b3305,6/0/605e511c1bc23da3a80ae6f6d04b07494ee13de7
 ]
 -Algorithms/844. Backspace String Compare.java,8/d/8d52ae764e743dbcd057974619c578dd8321900a
-S
-#151. Reverse Words in a String.java,6/4/64f0360ebecd6f7190498a1da44973dcd789a47f
 <
 Leetcode.iml,0/9/091bedbf9273215310213098b7fe44c7f0d151dc
 _
@@ -73,3 +71,15 @@ a
 1Algorithms/1408. String Matching in an Array.java,6/a/6a6c6084e120815e06e29d6ef87920d3a31563b5
 _
 /Algorithms/416. Partition Equal Subset Sum.java,d/0/d017153382213d85b6f919d15d4ed0b3620e40cf
+{
+KAlgorithms/34. Find First and Last Position of Element in Sorted Array.java,2/a/2a3b649e78af45e664dcf7bddc6873d5fd224e60
+M
+Algorithms/55. Jump Game.java,f/c/fcb3de5d1c0092f47a1bb4b90f1bc270be8bdf52
+S
+#Algorithms/312. Burst Balloons.java,6/f/6f12eac678740c2059b17ffad662073045a4288a
+P
+ Algorithms/322. Coin Change.java,1/b/1b5710131c80d455d939df75b0f4aaa96401a0d7
+U
+%Algorithms/337. House Robber III.java,4/c/4c9acff72154478912f1d5e12c5242583bd2eb59
+^
+.Algorithms/151. Reverse Words in a String.java,8/2/827586e13fdca542a473ee572dc7a93bc018e825
