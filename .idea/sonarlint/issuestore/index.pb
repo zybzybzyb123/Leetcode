@@ -83,3 +83,11 @@ U
 %Algorithms/337. House Robber III.java,4/c/4c9acff72154478912f1d5e12c5242583bd2eb59
 ^
 .Algorithms/151. Reverse Words in a String.java,8/2/827586e13fdca542a473ee572dc7a93bc018e825
+W
+'Algorithms/42. Trapping Rain Water.java,5/c/5c6c8c921da39a43192a1cfb1e38495d36b0858e
+]
+-Algorithms/11. Container With Most Water.java,2/2/22e59366681b48b7b95ee190b35217bc5b1c7d27
+d
+4Algorithms/1248. Count Number of Nice Subarrays.java,9/1/91de6a8f19780ef706bf1228cd74f99caaa9dad1
+`
+0Algorithms/other/LCP 09. 最小跳跃次数.java,e/d/ede2b54949616749371125ecab25f71d84dfb9f0

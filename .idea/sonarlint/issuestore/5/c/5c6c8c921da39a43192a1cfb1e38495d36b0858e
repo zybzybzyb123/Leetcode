@@ -1,0 +1,9 @@
+
+0
+java:S1220""Move this file to a named package.
+T
+java:S1854""9Remove this useless assignment to local variable "right".(Á²Öıÿÿÿÿ
+>
+java:S1659""#Declare "right" on a separate line.(Á²Öıÿÿÿÿ
+<
+java:S1659#"&Declare "rightMax" on a separate line.(üü…ğ
