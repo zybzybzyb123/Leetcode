@@ -1,6 +1,7 @@
 package Leetcode;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 class Solution {
 
@@ -29,6 +30,25 @@ class Solution {
         }
         return (int) (ans);
     }
+
+    public int lengthOfLIS(int[] nums) {
+        if (nums.length <= 1) {
+            return nums.length;
+        }
+        int n = nums.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        int ans = 0;
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+            ans = Math.max(ans, dp[i]);
+        }
+        return ans;
+    }
 }
 
 public class Main {
@@ -39,6 +59,5 @@ public class Main {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        String line = br.readLine();
         Solution solution = new Solution();
-        System.out.println(solution.numOfArrays(2, 3, 1));
     }
 }

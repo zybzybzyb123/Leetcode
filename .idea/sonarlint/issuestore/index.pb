@@ -91,3 +91,45 @@ d
 4Algorithms/1248. Count Number of Nice Subarrays.java,9/1/91de6a8f19780ef706bf1228cd74f99caaa9dad1
 `
 0Algorithms/other/LCP 09. 最小跳跃次数.java,e/d/ede2b54949616749371125ecab25f71d84dfb9f0
+T
+$.idea/codeStyles/codeStyleConfig.xml,d/d/dd7b3350c29c49497756c7f32c69a3bed18b1cba
+L
+.idea/codeStyles/Project.xml,6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648
+w
+G.idea/sonarlint/issuestore/9/1/91de6a8f19780ef706bf1228cd74f99caaa9dad1,4/c/4c4cbe9098f1db2a472042d02d7eabfe79380a74
+w
+G.idea/sonarlint/issuestore/e/d/ede2b54949616749371125ecab25f71d84dfb9f0,d/7/d7053e1e4b5307ba3b25b2f61ef3c82c43968475
+W
+'Algorithms/other/LCP 06. 拿硬币.java,9/8/9876740696a3b9bfafef6a59e3e3a604d61e1aef
+Z
+*Algorithms/other/LCP 07. 传递信息.java,1/f/1f087c337223a2dada50eb27fb7ca6342da1bd85
+`
+0Algorithms/other/LCP 08. 剧情触发时间.java,b/b/bbf47fe2ea185dc3a20f106b9a7966a23c8879f6
+`
+0Algorithms/199. Binary Tree Right Side View.java,4/3/43aeaa15ef62f53b577db8461fbb941b2d411487
+V
+&Algorithms/200. Number of Islands.java,d/c/dcf48cb7eccf9e9154350976bb066cd2148d7730
+t
+DAlgorithms/1413. Minimum Value to Get Positive Step by Step Sum.java,9/e/9e1617b3ff0f431c3beb779a3f79b09156904145
+�
+QAlgorithms/1414. Find the Minimum Number of Fibonacci Numbers Whose Sum Is K.java,0/5/05def7f675c862f44fb6aa8398bc671c0c5449c1
+�
+VAlgorithms/1415. The k-th Lexicographical String of All Happy Strings of Length n.java,8/9/89e23b16aa03e197b77b642d74c5950cce61e7c9
+W
+'Algorithms/1416. Restore The Array.java,c/1/c1095c0fafb5e8f49b1948ed20627ce07f531a18
+Y
+)Algorithms/1417. Reformat The String.java,2/b/2b552d12f6a1ef0e2387e62f014b4b341d6749b2
+r
+BAlgorithms/1418. Display Table of Food Orders in a Restaurant.java,b/d/bd6ff870c2a02ceb2dfc98275bb770b18857e964
+f
+6Algorithms/1419. Minimum Number of Frogs Croaking.java,d/5/d5c209c216f44e8230b6d33c29c37c5bcf86cafc
+r
+BAlgorithms/309. Best Time to Buy and Sell Stock with Cooldown.java,0/4/04e517fc05057de785a141ea05fab4d01550abe8
+c
+3Algorithms/300. Longest Increasing Subsequence.java,6/b/6b47ed4ffcf2bf7bb0f17f347bc41071563f5f44
+]
+-Algorithms/other/面试题 08.11. 硬币.java,2/6/26e66381f1ac12234326ebc0c9c775713a3e507c
+i
+9Algorithms/279. Perfect Squares 279. Perfect Squares.java,e/1/e1b66c60ea4f8c749bf142fc2a46d5794f8d7220
+Z
+*Algorithms/240. Search a 2D Matrix II.java,9/8/9880e6bec2fc5ad19a9b0620f5a79ce3226dda52

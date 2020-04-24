@@ -1,14 +1,10 @@
 
-V
-java:S3516"9Refactor this method to not always return the same value.(¡æáÌ8õÌ©ˆ™.
-™
-java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8±„‚„™.
-Ž
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8±„‚„™.
-]	java:S125"<This block of commented-out lines of code should be removed.(°ÛËõþÿÿÿÿ8±„‚„™.
-J	java:S108")Either remove or fill this block of code.(ò’”êþÿÿÿÿ8õÌ©ˆ™.
-^
-java:S1854!"<Remove this useless assignment to local variable "solution".(ËÊüþÿÿÿÿ8¢Ô£Ô™.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-O
-java:S1481!"-Remove this unused "solution" local variable.(ËÊüþÿÿÿÿ8¢Ô£Ô™.
+™
+java:S1130_"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8Çß‚»š.
+t
+java:S37767"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ö¡Ñ¹ûÿÿÿÿ8¾­ž»š.
+]	java:S125`"<This block of commented-out lines of code should be removed.(°ÛËõþÿÿÿÿ8Çß‚»š.
+Z	java:S106e"9Replace this use of System.out or System.err by a logger.(ˆ‡½Ñþÿÿÿÿ8Çß‚»š.
+Ž
+java:S1130_"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒþüøÿÿÿÿ8Çß‚»š.
