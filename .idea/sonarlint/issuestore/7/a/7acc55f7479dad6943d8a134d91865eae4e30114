@@ -1,0 +1,35 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ö³ôâıÿÿÿÿ
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(òëŸğ
+g
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(¦üÜú
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¦üÜú
+W
+java:S3078"AUse an "AtomicInteger" for this field; its operations are atomic.(‘ûòÔ
+’
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(Ù¯ ûÿÿÿÿ
+g
+java:S3457 "Q%n should be used in place of \n to produce the platform-specific line separator.(ıùÚÆ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(ıùÚÆ
+W
+java:S3078!"AUse an "AtomicInteger" for this field; its operations are atomic.(‘ûòÔ
+’
+java:S1130$"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ËÁ²şÿÿÿÿ
+l
+java:S3457-"Q%n should be used in place of \n to produce the platform-specific line separator.(¼’Ç•üÿÿÿÿ
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(¼’Ç•üÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(«‹Ï—ùÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ÍéëŒüÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(©Ş²ñ
+V	java:S125"<This block of commented-out lines of code should be removed.(‘”Éùÿÿÿÿ
+Q	java:S125'"<This block of commented-out lines of code should be removed.(©Ş²ñ
+Q	java:S125)"<This block of commented-out lines of code should be removed.(ÛíÚ
+V	java:S125/"<This block of commented-out lines of code should be removed.(¿€ìâıÿÿÿÿ
+Q	java:S1251"<This block of commented-out lines of code should be removed.(á•¬Í
+V	java:S1258"<This block of commented-out lines of code should be removed.(Åıºäúÿÿÿÿ
+Q	java:S125;"<This block of commented-out lines of code should be removed.(äĞ–½
+V	java:S125="<This block of commented-out lines of code should be removed.(ÙË½Œıÿÿÿÿ
+V	java:S125@"<This block of commented-out lines of code should be removed.(¼®¼üÿÿÿÿ
+P	java:S125C"<This block of commented-out lines of code should be removed.(ï¹ÿx
+V	java:S125E"<This block of commented-out lines of code should be removed.(°ƒ®ïûÿÿÿÿ

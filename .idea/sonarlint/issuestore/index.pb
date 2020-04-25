@@ -133,3 +133,49 @@ i
 9Algorithms/279. Perfect Squares 279. Perfect Squares.java,e/1/e1b66c60ea4f8c749bf142fc2a46d5794f8d7220
 Z
 *Algorithms/240. Search a 2D Matrix II.java,9/8/9880e6bec2fc5ad19a9b0620f5a79ce3226dda52
+g
+7src/main/java/Leetcode/dataStructure/advanced/Trie.java,8/c/8cf239c536fdefe8b827435b48cd84e6f9f5eb95
+w
+G.idea/sonarlint/issuestore/0/4/04e517fc05057de785a141ea05fab4d01550abe8,6/0/60c164a3f75ded33a3b46e5c155261112418fd6c
+w
+G.idea/sonarlint/issuestore/0/5/05def7f675c862f44fb6aa8398bc671c0c5449c1,6/c/6c554e388b578b132965def0fe6bd053f0e4371f
+w
+G.idea/sonarlint/issuestore/1/f/1f087c337223a2dada50eb27fb7ca6342da1bd85,e/e/eee2e25288bc549dd55e1d57e47f54fd8e70adc2
+w
+G.idea/sonarlint/issuestore/2/6/26e66381f1ac12234326ebc0c9c775713a3e507c,7/9/790828a082d1cd38b5561cf00158622f798a3a20
+w
+G.idea/sonarlint/issuestore/2/b/2b552d12f6a1ef0e2387e62f014b4b341d6749b2,8/2/8255bb2b314954659b73cd8f015b4e9043b09fb7
+w
+G.idea/sonarlint/issuestore/4/3/43aeaa15ef62f53b577db8461fbb941b2d411487,3/3/335e95b700e9737dc99b2e27059c95e9777c43d7
+w
+G.idea/sonarlint/issuestore/6/b/6b47ed4ffcf2bf7bb0f17f347bc41071563f5f44,f/6/f6213a90c92a3362b2e193ba3d6ca170290275f3
+w
+G.idea/sonarlint/issuestore/8/9/89e23b16aa03e197b77b642d74c5950cce61e7c9,9/a/9a3848995ac4662ab2cb2ef4ea00a2fb0604162e
+w
+G.idea/sonarlint/issuestore/9/8/9876740696a3b9bfafef6a59e3e3a604d61e1aef,8/8/88ebbe491f078c07fef764baf8fdd865cbbad114
+w
+G.idea/sonarlint/issuestore/9/e/9e1617b3ff0f431c3beb779a3f79b09156904145,b/7/b77c861fd8820fbf8c35cc7e9a818f4dccf80611
+w
+G.idea/sonarlint/issuestore/c/1/c1095c0fafb5e8f49b1948ed20627ce07f531a18,3/0/3035ba4e20c4f96586de9810eaf784ea5e88ff51
+w
+G.idea/sonarlint/issuestore/d/c/dcf48cb7eccf9e9154350976bb066cd2148d7730,8/e/8e4a64fb3eb2ba0b8afd0885eaad13620383d113
+w
+G.idea/sonarlint/issuestore/e/1/e1b66c60ea4f8c749bf142fc2a46d5794f8d7220,2/1/21fdbd197a91a5e34dea5369786892310d673b31
+h
+8Algorithms/other/面试题51. 数组中的逆序对.java,6/d/6df303c16bcfb42e8dc88c6552d88a623d9644c1
+[
++Algorithms/239. Sliding Window Maximum.java,e/7/e75fe02fa251b3766c214b893a51f05553d51524
+f
+6src/main/java/Leetcode/dataStructure/advanced/Bit.java,8/a/8aec83b5176c2f22f8698f1f1baa50455f4dc587
+g
+7src/main/java/Leetcode/dataStructure/base/TreeNode.java,5/4/54654e8092250e7e5765b814699bc483715e6091
+U
+%src/main/java/Leetcode/extra/Foo.java,7/a/7acc55f7479dad6943d8a134d91865eae4e30114
+U
+%src/main/java/Leetcode/extra/H2O.java,f/7/f71d003fdfcfabc798cad1b1c6ab2ca7f50c6a94
+_
+/src/main/java/Leetcode/extra/MountainArray.java,b/7/b74a3b4dfbafc39da939c9f9469de54904b4b095
+_
+/src/main/java/Leetcode/extra/SnapshotArray.java,9/4/9417525f1487d29c0ed15d1f37fd51d6a18a66df
+l
+<Algorithms/236. Lowest Common Ancestor of a Binary Tree.java,0/d/0daeca9b30ad6f6ce51b5a6ad8ed62aeafdc13e7

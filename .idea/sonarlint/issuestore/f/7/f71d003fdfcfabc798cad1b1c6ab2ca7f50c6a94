@@ -1,0 +1,16 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ö³ôâıÿÿÿÿ
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ù¼ıì
+
+java:S1130	"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.( ˆİ˜
+V
+java:S3078"AUse an "AtomicInteger" for this field; its operations are atomic.(÷ÜÕm
+K
+java:S2696"6Make the enclosing method "static" or remove this set.(÷ÜÕm
+
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(¢ôó
+V
+java:S3078"AUse an "AtomicInteger" for this field; its operations are atomic.(÷ÜÕm
+K
+java:S2696"6Make the enclosing method "static" or remove this set.(÷ÜÕm

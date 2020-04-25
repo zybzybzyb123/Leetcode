@@ -3,7 +3,7 @@ package Leetcode.dataStructure.advanced;
 public class Trie {
 
     private class TrieNode {
-        Boolean isLeaf = false;
+        boolean isLeaf = false;
         public TrieNode[] nodes = new TrieNode[26];
     }
 
