@@ -179,3 +179,13 @@ _
 /src/main/java/Leetcode/extra/SnapshotArray.java,9/4/9417525f1487d29c0ed15d1f37fd51d6a18a66df
 l
 <Algorithms/236. Lowest Common Ancestor of a Binary Tree.java,0/d/0daeca9b30ad6f6ce51b5a6ad8ed62aeafdc13e7
+w
+G.idea/sonarlint/issuestore/0/d/0daeca9b30ad6f6ce51b5a6ad8ed62aeafdc13e7,1/d/1dfcca00164b4deae41237e082bf817520cbc992
+w
+G.idea/sonarlint/issuestore/6/d/6df303c16bcfb42e8dc88c6552d88a623d9644c1,2/5/257aa7de7bdaacf2d26e999dce3396edaa7a02fe
+P
+ Algorithms/46. Permutations.java,2/6/26c14b4b2e215cc08d718a772ad523abaa3ddd14
+c
+3src/main/java/Leetcode/dataStructure/base/Node.java,1/3/133295f07720e28fa53a8f474c38091c4f1abc31
+P
+ src/main/java/Leetcode/Test.java,8/4/842ddcef4a3567fe43b7ebd21f2ebf4359680e97

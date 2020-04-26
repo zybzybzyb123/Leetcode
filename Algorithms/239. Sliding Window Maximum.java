@@ -7,7 +7,7 @@ class Solution {
         if (k == 1) {
             return nums;
         }
-        Deque<Integer> deque = new LinkedList<>();
+        Deque<Integer> deque = new ArrayDeque<>();
         int[] ans = new int[nums.length - k + 1];
         for (int i = 0; i < k; i++) {
             if (deque.isEmpty()) {

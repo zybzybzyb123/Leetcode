@@ -1,15 +1,16 @@
 
-^
-java:S1854C"<Remove this useless assignment to local variable "solution".(ËÊüşÿÿÿÿ8ë–şš.
-]	java:S125?"<This block of commented-out lines of code should be removed.(°ÛËõşÿÿÿÿ8ë–şš.
+s	java:S127O"XRefactor the code in order to not assign to this loop counter from within the loop body.(íßë_8£¾„ƒ›.
 O
-java:S1481C"-Remove this unused "solution" local variable.(ËÊüşÿÿÿÿ8ë–şš.
-
-java:S1130>"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8ë–şš.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
+java:S1481q"-Remove this unused "solution" local variable.(ËÊüşÿÿÿÿ8úúòˆ›.
+]	java:S125m"<This block of commented-out lines of code should be removed.(°ÛËõşÿÿÿÿ8¹ÏÏˆ›.
 ™
-java:S1130>"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8ë–şš.
+java:S1130l"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8úúòˆ›.
+
+java:S1130l"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8úúòˆ›.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
+^
+java:S1854q"<Remove this useless assignment to local variable "solution".(ËÊüşÿÿÿÿ8úúòˆ›.
 H
-java:S11727"&Remove these unused method parameters.(œç¥ÿÿÿÿÿ8á§‰ÿš.
+java:S11725"&Remove these unused method parameters.(œç¥ÿÿÿÿÿ8á§‰ÿš.
 V
-java:S34008"9Remove this method and declare a constant for this value.(”·³›8á§‰ÿš.
+java:S34006"9Remove this method and declare a constant for this value.(”·³›8á§‰ÿš.

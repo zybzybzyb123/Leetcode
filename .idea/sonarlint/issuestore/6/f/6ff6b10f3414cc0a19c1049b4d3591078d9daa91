@@ -1,5 +1,4 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
 D
 java:S1121)".Extract the assignment out of this expression.(¢´—Œ
 7
@@ -7,3 +6,4 @@ java:S1659"!Declare "end" on a separate line.(±Ñ‡Æ
 S	java:S106"9Replace this use of System.out or System.err by a logger.(ì‡àÖüÿÿÿÿ
 ?
 java:S1172"*Remove this unused method parameter "end".(ýÂ‰^
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
