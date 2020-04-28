@@ -47,26 +47,25 @@ class Solution {
         if (list1.val < list2.val) {
             list1.next = merge(list1.next, list2);
             return list1;
-        } else {
-            list2.next = merge(list1, list2.next);
-            return list2;
         }
+        list2.next = merge(list1, list2.next);
+        return list2;
     }
 
-    private ListNode solve(ListNode[] lists, int left, int right) {
+    private ListNode mergeHelper(ListNode[] lists, int left, int right) {
         if (left == right) {
             return lists[left];
         }
-        int mid = (left + right) >> 1;
-        ListNode lnode = solve(lists, left, mid);
-        ListNode rnode = solve(lists, mid + 1, right);
-        return merge(lnode, rnode);
+        int mid = left + (right - left) / 2;
+        ListNode list1 = mergeHelper(lists, left, mid);
+        ListNode list2 = mergeHelper(lists, mid + 1, right);
+        return merge(list1, list2);
     }
 
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists == null || lists.length <= 0) {
+        if (lists == null || lists.length == 0) {
             return null;
         }
-        return solve(lists, 0, lists.length - 1);
+        return mergeHelper(lists, 0, lists.length - 1);
     }
 }

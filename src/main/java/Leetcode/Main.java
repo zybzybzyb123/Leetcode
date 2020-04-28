@@ -29,15 +29,6 @@ class Solution {
         }
         return (int) (ans);
     }
-
-    public int getKth(int lo, int hi, int k) {
-        return 0;
-    }
-
-    public int constrainedSubsetSum(int[] nums, int k) {
-
-        return 0;
-    }
 }
 
 public class Main {
@@ -48,6 +39,8 @@ public class Main {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        String line = br.readLine();
         Solution solution = new Solution();
+        int[] nums = {10,2,-10,5,20};
+        int k = 2;
         System.out.println(solution);
     }
 }
