@@ -2,6 +2,8 @@ package Leetcode.dataStructure.advanced;
 
 /**
  * 树状数组
+ * @author zero
+ * @created 2020/04/29
  */
 public class Bit {
     private int[] c;

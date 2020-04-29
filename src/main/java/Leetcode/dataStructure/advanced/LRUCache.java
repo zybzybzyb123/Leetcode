@@ -3,6 +3,10 @@ package Leetcode.dataStructure.advanced;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 public class LRUCache<K, V> {
     
     private class Node {

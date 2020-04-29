@@ -3,6 +3,11 @@ package Leetcode.extra;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 class SnapshotArray {
 
     private Map<Integer, Map<Integer, Integer>> map = new HashMap<>();

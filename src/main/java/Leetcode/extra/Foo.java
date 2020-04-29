@@ -1,5 +1,9 @@
 package Leetcode.extra;
 
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 public class Foo {
 
     public Foo() {

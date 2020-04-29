@@ -2,6 +2,10 @@ package Leetcode.dataStructure.base;
 
 import java.util.List;
 
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 public interface NestedInteger {
 
 //    public NestedInteger();

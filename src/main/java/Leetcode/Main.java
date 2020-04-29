@@ -2,6 +2,10 @@ package Leetcode;
 
 import java.io.IOException;
 
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 class Solution {
 
     public int numOfArrays(int n, int m, int k) {
@@ -34,13 +38,12 @@ class Solution {
 public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        // FileInputStream file = new FileInputStream('in.txt');
-        // System.setIn(file);
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        String line = br.readLine();
+//        String filePath = "src/main/java/Leetcode/in.txt";
+//        FileInputStream inputStream = new FileInputStream(filePath);
+//        System.setIn(new BufferedInputStream(inputStream));
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//        String line = reader.readLine();
         Solution solution = new Solution();
-        int[] nums = {10,2,-10,5,20};
-        int k = 2;
         System.out.println(solution);
     }
 }

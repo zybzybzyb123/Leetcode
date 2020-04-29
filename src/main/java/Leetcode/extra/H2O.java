@@ -1,6 +1,11 @@
 package Leetcode.extra;
 
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 public class H2O {
+
     private static volatile int cnt = 0;
     public H2O() {
 

@@ -1,5 +1,9 @@
 package Leetcode.dataStructure.advanced;
 
+/**
+ * @author zero
+ * @created 2020/04/29
+ */
 public class Trie {
 
     private class TrieNode {
