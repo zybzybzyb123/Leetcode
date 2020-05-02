@@ -1,16 +1,8 @@
 
-™
-java:S1130$"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8¼€Îø›.
-U	java:S106,"9Replace this use of System.out or System.err by a logger.(ú…‡ì8öù÷›.
-
-java:S1130$"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(àÒşüøÿÿÿÿ8¼€Îø›.
-K
-java:S1481*")Remove this unused "nums" local variable.(Ñ­Îüÿÿÿÿÿ8¼€Îø›.
-C
-java:S1481+"&Remove this unused "k" local variable.(½òâ‡8¼€Îø›.
+@
+java:S16599"#Declare "right" on a separate line.(ÑÄ­˜8à¾©€.
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(ú…‡ì8å•¸Úœ.
+]	java:S125J"<This block of commented-out lines of code should be removed.(’¥ûÿÿÿÿ8å•¸Úœ.
+‰
+java:S1130I"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8å•¸Úœ.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-R
-java:S1854+"5Remove this useless assignment to local variable "k".(½òâ‡8¼€Îø›.
-]	java:S125%"<This block of commented-out lines of code should be removed.(°ÛËõşÿÿÿÿ8öù÷›.
-Z
-java:S1854*"8Remove this useless assignment to local variable "nums".(Ñ­Îüÿÿÿÿÿ8¼€Îø›.

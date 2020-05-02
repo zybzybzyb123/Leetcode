@@ -6,53 +6,69 @@ package Leetcode.dataStructure.advanced;
  */
 public class Trie {
 
-    private class TrieNode {
-        boolean isLeaf = false;
-        public TrieNode[] nodes = new TrieNode[26];
-    }
+    private TrieNode root;
 
-    TrieNode root = null;
+    static class TrieNode {
+        private char val;
+        private boolean isWord;
+        private TrieNode[] leafs;
+
+        public TrieNode(char val) {
+            this.val = val;
+            this.leafs = new TrieNode[26];
+        }
+    }
 
     /** Initialize your data structure here. */
     public Trie() {
-        root = new TrieNode();
+        root = new TrieNode('a');
     }
 
     /** Inserts a word into the trie. */
     public void insert(String word) {
-        TrieNode head = root;
-        for(char ch : word.toCharArray()){
+        TrieNode[] temp = root.leafs;
+        int len = word.length();
+        for (int i = 0; i < len; i++) {
+            char ch = word.charAt(i);
             int pos = ch - 'a';
-            if(head.nodes[pos] == null){
-                head.nodes[pos] = new TrieNode();
+            if (temp[pos] == null) {
+                temp[pos] = new TrieNode(ch);
             }
-            head = head.nodes[pos];
+            if (i == len - 1) {
+                temp[pos].isWord = true;
+            }
+            temp = temp[pos].leafs;
         }
-        head.isLeaf = true;
     }
 
     /** Returns if the word is in the trie. */
     public boolean search(String word) {
-        TrieNode head = root;
-        for(char ch : word.toCharArray()){
+        TrieNode[] temp = root.leafs;
+        int len = word.length();
+        for (int i = 0; i < len; i++) {
+            char ch = word.charAt(i);
             int pos = ch - 'a';
-            if(head.nodes[pos] == null){
+            if (temp[pos] == null
+                    || (i == len - 1
+                    && temp[pos].isWord == false)) {
                 return false;
             }
-            head = head.nodes[pos];
+            temp = temp[pos].leafs;
         }
-        return head.isLeaf;
+        return true;
     }
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
     public boolean startsWith(String prefix) {
-        TrieNode head = root;
-        for(char ch : prefix.toCharArray()){
+        TrieNode[] temp = root.leafs;
+        int len = prefix.length();
+        for (int i = 0; i < len; i++) {
+            char ch = prefix.charAt(i);
             int pos = ch - 'a';
-            if(head.nodes[pos] == null){
+            if (temp[pos] == null) {
                 return false;
             }
-            head = head.nodes[pos];
+            temp = temp[pos].leafs;
         }
         return true;
     }

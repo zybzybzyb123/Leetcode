@@ -6,7 +6,12 @@ import java.io.IOException;
  * @author zero
  * @created 2020/04/29
  */
+
 class Solution {
+
+}
+
+public class Main {
 
     public int numOfArrays(int n, int m, int k) {
         if (m < k) {
@@ -33,11 +38,8 @@ class Solution {
         }
         return (int) (ans);
     }
-}
 
-public class Main {
-
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
 //        String filePath = "src/main/java/Leetcode/in.txt";
 //        FileInputStream inputStream = new FileInputStream(filePath);
 //        System.setIn(new BufferedInputStream(inputStream));
