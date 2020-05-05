@@ -1,5 +1,7 @@
 package Leetcode;
 
+import Leetcode.dataStructure.base.ListNode;
+
 import java.io.IOException;
 
 /**
@@ -8,10 +10,6 @@ import java.io.IOException;
  */
 
 class Solution {
-
-}
-
-public class Main {
 
     public int numOfArrays(int n, int m, int k) {
         if (m < k) {
@@ -38,6 +36,13 @@ public class Main {
         }
         return (int) (ans);
     }
+
+    public ListNode sortList(ListNode head) {
+        return null;
+    }
+}
+
+public class Main {
 
     public static void main(String[] args) throws IOException {
 //        String filePath = "src/main/java/Leetcode/in.txt";
