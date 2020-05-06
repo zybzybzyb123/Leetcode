@@ -1,7 +1,5 @@
 package Leetcode;
 
-import Leetcode.dataStructure.base.ListNode;
-
 import java.io.IOException;
 
 /**
@@ -35,10 +33,6 @@ class Solution {
             ans = (ans + dp[n][i][k]) % mod;
         }
         return (int) (ans);
-    }
-
-    public ListNode sortList(ListNode head) {
-        return null;
     }
 }
 
