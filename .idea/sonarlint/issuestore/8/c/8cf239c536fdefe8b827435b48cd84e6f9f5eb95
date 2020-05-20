@@ -1,4 +1,6 @@
 
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(òüàæÿÿÿÿÿ
-g
-java:S1104"QMake nodes a static final constant or non-public and provide accessors if needed.(Çå¥
+K
+java:S11255")Remove the literal "false" boolean value.(ë—Ğ†øÿÿÿÿ8Å½îâ.
+D
+java:S1068"'Remove this unused "val" private field.(›û Â8Å½îâ.

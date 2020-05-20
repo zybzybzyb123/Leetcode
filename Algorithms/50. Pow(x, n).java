@@ -1,28 +1,19 @@
 /**
- * 矩阵快速幂，测试数据挺无语的，注意处理Integer.MIN_VALUE
+ * 矩阵快速幂, 注意最大负数这个坑
  */
 
 class Solution {
     public double myPow(double x, int n) {
-        if(x == 0) return 0;
-        double ans = 1.0, temp = x;
-        if(n < 0){
-            if(n == Integer.MIN_VALUE){
-                ans = 1 / x;
-                n = Integer.MAX_VALUE;
-            } else{
-                n = -n;
+        // 注意最大负数,直接加负号会溢出
+        long m = n > 0 ? n : 0L - n;
+        double ans = 1.0;
+        while (m > 0) {
+            if ((m & 1) == 1) {
+                ans *= x;
             }
-            x = 1 / x;
-            temp = x;
+            x *= x;
+            m /= 2;
         }
-        while(n > 0){
-            if((n & 1) != 0){
-                ans *= temp;
-            }
-            temp *= temp;
-            n >>= 1;
-        }
-        return ans;
+        return n > 0 ? ans : 1 / ans;
     }
 }

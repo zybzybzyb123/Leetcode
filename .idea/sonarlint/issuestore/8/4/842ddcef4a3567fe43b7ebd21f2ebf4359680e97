@@ -1,16 +1,17 @@
 
->
-java:S11489"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-N	java:S1067"9Replace this use of System.out or System.err by a logger.(âÜ
->
-java:S1148@"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-S	java:S106E"9Replace this use of System.out or System.err by a logger.(Û²×¹ùÿÿÿÿ
-S	java:S106>"9Replace this use of System.out or System.err by a logger.(Ñ˜¬þÿÿÿÿ
->
-java:S1148G"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-?
-java:S11441")Remove this unused private "test" method.(¬ÊµË
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-V
-java:S2130"9Use "Integer.parseInt" for this string-to-int conversion.(²Ì8Úö¬Ûœ.
-U	java:S106,"9Replace this use of System.out or System.err by a logger.(›Ê‘·8Úö¬Ûœ.
+?
+java:S1144")Remove this unused private "test" method.(¬ÊµË
+>
+java:S1148,"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(Ñ˜¬þÿÿÿÿ
+N	java:S106#"9Replace this use of System.out or System.err by a logger.(âÜ
+>
+java:S11483"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+>
+java:S1148%"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(Û²×¹ùÿÿÿÿ
+W
+java:S1854":Remove this useless assignment to local variable "reader".(Ï ¾ð8®‚“‘£.
+H
+java:S1481"+Remove this unused "reader" local variable.(Ï ¾ð8®‚“‘£.
