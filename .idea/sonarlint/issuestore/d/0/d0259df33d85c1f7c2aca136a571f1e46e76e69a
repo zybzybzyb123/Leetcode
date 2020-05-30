@@ -1,48 +1,30 @@
 
-p
-java:S1450Ÿ"RRemove the "pre" field and declare it as a local variable in the relevant methods.(²ô‹¨8ÌÅñ£.
-`
-java:S15967">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(÷ƒ¨öúÿÿÿÿ8×­ñ¹¢.
-B
-java:S1659–"Declare "m" on a separate line.(×½ĞÓûÿÿÿÿ8×­ñ¹¢.
-L
-java:S5411o"*Use the primitive boolean expression here.(¸–çöúÿÿÿÿ8×­ñ¹¢.
-J	java:S108L")Either remove or fill this block of code.(Ò¹ÀÈÿÿÿÿÿ8×­ñ¹¢.
-I
-java:S1172›"&Remove these unused method parameters.(ş¾ÖÌøÿÿÿÿ8ÌÅñ£.
-K
-java:S1144—"(Remove this unused private "dis" method.(‰åãÆùÿÿÿÿ8ÌÅñ£.
-W
-java:S1854¹"9Remove this useless assignment to local variable "pizza".(Åò±µ8¿ÿ³¶£.
-Z
-java:S1117"8Rename "mod" which hides the field declared at line 122.(«÷›Œøÿÿÿÿ8×­ñ¹¢.
-u
-java:S3776•"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Å¶¢Óıÿÿÿÿ8×­ñ¹¢.
-{	java:S135ÿ"YReduce the total number of break and continue statements in this loop to use at most one.(½àòúüÿÿÿÿ8ÌÅñ£.
-^	java:S125³"<This block of commented-out lines of code should be removed.(’¥ûÿÿÿÿ8¿ÿ³¶£.
-e
-java:S2184˜"BCast one of the operands of this addition operation to a "double".(ŞÂ•™úÿÿÿÿ8ÌÅñ£.
-E
-java:S1659³""Declare "temp" on a separate line.(êúúÿÿÿÿ8×­ñ¹¢.
+¤
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(“æÀüÿÿÿÿ8“íÕÛ¥.
+^	java:S125–"<This block of commented-out lines of code should be removed.(’¥ûÿÿÿÿ8ß´ä±¥.
+{	java:S135ö"YReduce the total number of break and continue statements in this loop to use at most one.(½àòúüÿÿÿÿ8ÌÅñ£.
 f
-java:S2259Ì"CA "NullPointerException" could be thrown; "pHead" is nullable here.(ˆÓÆšıÿÿÿÿ8×­ñ¹¢.
-Š
-java:S1130²"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8¿ÿ³¶£.
-V	java:S106»"9Replace this use of System.out or System.err by a logger.(ú…‡ì8¿ÿ³¶£.
+java:S2259Ã"CA "NullPointerException" could be thrown; "pHead" is nullable here.(ˆÓÆšıÿÿÿÿ8×­ñ¹¢.
+J	java:S108J")Either remove or fill this block of code.(Ò¹ÀÈÿÿÿÿÿ8×­ñ¹¢.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(íÕ×¶
-S
-java:S1854º"5Remove this useless assignment to local variable "k".(±šÜ»8³‘ª¶£.
+A
+java:S1659z"Declare "m" on a separate line.(×½ĞÓûÿÿÿÿ8×­ñ¹¢.
+Š
+java:S1130•"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8ß´ä±¥.
 H
-java:S1481¹"*Remove this unused "pizza" local variable.(Åò±µ8¿ÿ³¶£.
-D
-java:S1481º"&Remove this unused "k" local variable.(±šÜ»8³‘ª¶£.
+java:S1659ª"%Declare "newHead" on a separate line.(êúúÿÿÿÿ8×­ñ¹¢.
 u
-java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¦É…€úÿÿÿÿ8ÌÅñ£.
-W
-java:S3400œ"9Remove this method and declare a constant for this value.(”·³›8ÌÅñ£.
+java:S3776ñ"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¦É…€úÿÿÿÿ8ÌÅñ£.
+V	java:S106"9Replace this use of System.out or System.err by a logger.(âòÇò8ß´ä±¥.
+L
+java:S5411m"*Use the primitive boolean expression here.(¸–çöúÿÿÿÿ8×­ñ¹¢.
 f
-java:S2259Å"CA "NullPointerException" could be thrown; "pHead" is nullable here.(ˆÓÆšıÿÿÿÿ8×­ñ¹¢.
+java:S2259¼"CA "NullPointerException" could be thrown; "pHead" is nullable here.(ˆÓÆšıÿÿÿÿ8×­ñ¹¢.
+t
+java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(Å¶¢Óıÿÿÿÿ8×­ñ¹¢.
+`
+java:S15965">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(÷ƒ¨öúÿÿÿÿ8×­ñ¹¢.
 =
-java:S1659º"Declare "q" on a separate line.(õµšµ8×­ñ¹¢.
-H
-java:S1659³"%Declare "newHead" on a separate line.(êúúÿÿÿÿ8×­ñ¹¢.
+java:S1659±"Declare "q" on a separate line.(õµšµ8×­ñ¹¢.
+E
+java:S1659ª""Declare "temp" on a separate line.(êúúÿÿÿÿ8×­ñ¹¢.

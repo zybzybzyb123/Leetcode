@@ -117,57 +117,50 @@ class Solution {
         return ans;
     }
 
-    private int mod = 1_000_000_000 + 7;
-
-    private int dfs(int n, int m, int k, int[][] sum, int[][][] dp) {
-        if (dp[n][m][k] != -1) {
-            return dp[n][m][k];
-        }
-        if (sum[n][m] < k) {
-            return 0;
-        }
-        if (k == 1) {
-            return 1;
-        }
-        int cnt = sum[n][m];
-        dp[n][m][k] = 0;
-        for (int i = n - 1; i >= 0; i--) {
-            if (sum[i][m] < cnt) {
-                dp[n][m][k] = (dp[n][m][k] + dfs(i, m, k - 1, sum, dp)) % mod;
-            }
-        }
-        for (int i = m - 1; i >= 0; i--) {
-            if (sum[n][i] < cnt) {
-                dp[n][m][k] = (dp[n][m][k] + dfs(n, i, k - 1, sum, dp)) % mod;
-            }
-        }
-        return dp[n][m][k];
-    }
-
     public int ways(String[] pizza, int k) {
+        int mod = 1_000_000_000 + 7;
         int n = pizza.length, m = pizza[0].length();
         int[][] sum = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = m - 1; j >= 0; j--) {
                 int flag = pizza[i].charAt(j) == 'A' ? 1 : 0;
-                if (i == 0 && j == 0) {
+                if (i == n - 1 && j == m - 1) {
                     sum[i][j] = flag;
-                } else if (i == 0) {
-                    sum[i][j] = sum[i][j - 1] + flag;
-                } else if (j == 0) {
-                    sum[i][j] = sum[i - 1][j] + flag;
+                } else if (i == n - 1) {
+                    sum[i][j] = sum[i][j + 1] + flag;
+                } else if (j == m - 1) {
+                    sum[i][j] = sum[i + 1][j] + flag;
                 } else {
-                    sum[i][j] = sum[i - 1][j] + sum[i][j - 1] - sum[i - 1][j - 1] + flag;
+                    sum[i][j] = sum[i + 1][j] + sum[i][j + 1] - sum[i + 1][j + 1] + flag;
                 }
             }
         }
         int[][][] dp = new int[n][m][k + 1];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                Arrays.fill(dp[i][j], -1);
+        dp[n - 1][m - 1][0] = 1;
+        for (int i = 1; i < k; i++) {
+            for (int j = n - 1; j >= 0; j--) {
+                for (int l = m - 1; l >= 0; l--) {
+                    for (int o = j + 1; o < n; o++) {
+                        if (sum[o][l] < sum[j][l]) {
+                            dp[j][l][i] = (dp[j][l][i + 1] + dp[o][l][i - 1]) % mod;
+                        }
+
+                    }
+                    for (int o = l + 1; o < m; o++) {
+                        if (sum[j][o] < sum[j][l]) {
+                            dp[j][l][i] = (dp[j][l][i] + dp[j][o][i - 1]) % mod;
+                        }
+                    }
+                }
             }
         }
-        return dfs(n - 1, m - 1, k, sum, dp);
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                res = (res + dp[i][j][k - 1]) % mod;
+            }
+        }
+        return res;
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {
@@ -273,6 +266,25 @@ class Solution {
         }
         return ans;
     }
+
+    public int rob(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int n = nums.length;
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        //
+        for (int i = 2; i < n; i++) {
+            // 取和不取
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        return dp[n - 1];
+    }
 }
 
 public class Main {
@@ -286,6 +298,6 @@ public class Main {
         Solution solution = new Solution();
         String[] pizza = {".A..A", "A.A..", "A.AA.", "AAAA.", "A.AA."};
         int k = 5;
-        System.out.println(solution.ways(pizza, k));
+        System.out.println(solution);
     }
 }
