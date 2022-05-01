@@ -1,4 +1,4 @@
-package Leetcode.dataStructure.base;
+package Leetcode.extra;
 
 import java.util.List;
 

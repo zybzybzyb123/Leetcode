@@ -3,6 +3,7 @@ package Leetcode.dataStructure.advanced;
 /**
  * @author zero
  * @created 2020/04/29
+ * dictionary tree
  */
 public class Trie {
 
