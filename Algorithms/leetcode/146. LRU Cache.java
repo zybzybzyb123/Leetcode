@@ -3,52 +3,44 @@
  */
 
 class LRUCache {
-
-    class Node {
-        private int key;
-        private int value;
-        private Node pre;
+    private class Node {
+        private Integer key;
+        private Integer value;
+        private Node prev;
         private Node next;
-        private Node() {}
 
-        public Node(int key, int value) {
+        public Node(Integer key, Integer value) {
             this.key = key;
             this.value = value;
         }
+
+        public Node() {
+        }
     }
-
     private Map<Integer, Node> lruCache;
-    private int size;
+    private Node head, tail;
     private int capacity;
-    private Node head;
-    private Node tail;
-
+    private int size;
     public LRUCache(int capacity) {
-        lruCache = new HashMap<>(capacity);
-        this.size = 0;
-        this.capacity = capacity;
-        this.head = new Node();
-        this.tail = new Node();
+        lruCache = new HashMap<>();
+        head = new Node();
+        tail = new Node();
         head.next = tail;
-        tail.pre = head;
+        tail.prev = head;
+        this.capacity = capacity;
+        size = 0;
     }
 
     private void removeNode(Node node) {
-        node.pre.next = node.next;
-        node.next.pre = node.pre;
-        node.next = null;
-        node.pre = null;
-        size--;
-        lruCache.remove(node.key);
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
     }
 
-    private void addNode(Node node) {
-        node.next = tail;
-        tail.pre.next = node;
-        node.pre = tail.pre;
-        tail.pre = node;
-        size++;
-        lruCache.put(node.key, node);
+    private void addHead(Node node) {
+        node.next = head.next;
+        head.next = node;
+        node.next.prev = node;
+        node.prev = head;
     }
 
     public int get(int key) {
@@ -56,28 +48,30 @@ class LRUCache {
         if (node == null) {
             return -1;
         }
-        if (node != tail) {
-            removeNode(node);
-            addNode(node);
-        }
+        // move head
+        removeNode(node);
+        addHead(node);
         return node.value;
     }
 
     public void put(int key, int value) {
-        Node node = lruCache.get(key);
-        if (node == null) {
-            node = new Node(key, value);
-            addNode(node);
-            if (size > capacity) {
-                removeNode(head.next);
-            }
-        } else {
+        if (lruCache.containsKey(key)) {
+            Node node = lruCache.get(key);
             node.value = value;
-            if (node == tail) {
-                return;
-            }
             removeNode(node);
-            addNode(node);
+            addHead(node);
+        } else {
+            Node node = new Node(key, value);
+            if (size == capacity) {
+                lruCache.remove(tail.prev.key);
+                removeNode(tail.prev);
+                addHead(node);
+                lruCache.put(key, node);
+            } else {
+                size++;
+                addHead(node);
+                lruCache.put(key, node);
+            }
         }
     }
 }
@@ -88,3 +82,19 @@ class LRUCache {
  * int param_1 = obj.get(key);
  * obj.put(key,value);
  */
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        LRUCache lruCache = new LRUCache(2);
+        lruCache.put(1, 1);
+        lruCache.put(2, 2);
+        System.out.println(lruCache.get(1));
+        lruCache.put(3, 3);
+        System.out.println(lruCache.get(2));
+        lruCache.put(4, 4);
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(3));
+        System.out.println(lruCache.get(4));
+    }
+}
